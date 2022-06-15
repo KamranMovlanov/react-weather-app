@@ -1,0 +1,95 @@
+.searchContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.searchBar {
+    border: none;
+    position: relative;
+    top: -18px;
+    background-color: rgba(14, 14, 14, .4);
+    padding: 10px;
+    border-radius: 10px;
+    width: 320px;
+    font-weight: 600;
+    outline: none;
+    color: #e5d9c4;
+    box-shadow: rgb(40, 40, 40) 0px 2px 5px, rgba(78, 78, 78, 0.1) 0px 4px 5px;
+    cursor: pointer;
+    -webkit-transition: 0.25s;
+    -o-transition: 0.25s;
+    transition: 0.25s;
+}
+
+
+.searchBar:hover {
+    background-color: rgba(49, 49, 49, 0.8);
+}
+
+/*============ Weather ==============*/
+.weatherContainer {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    margin: 10px 0 25px 0;
+    padding: 20px;
+    height: 300px;
+    border-radius: 15px;
+    background-color: rgba(39, 39, 39, 0.05);
+    overflow: scroll;
+}
+
+.temp {
+    color: rgb(189, 219, 243);
+    margin: 0;
+}
+
+.OtherInformation {
+    position: absolute;
+    top: 20px;
+    padding: 20px;
+    left: 500px;
+    display: inline-flex;
+    flex-direction: column;
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    font-weight: 600;
+    color: rgba(254, 254, 254, 0.5);
+}
+
+.city {
+    margin: 0;
+}
+
+.date {
+    margin: 0;
+    padding-top: 10px;
+    padding-bottom: 40px;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+}
+
+.humidity {
+    margin-right: 30px;
+}
+
+.wind {
+    margin-right: 30px;
+}
+
+.feelsLike {
+    margin: 0px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+
+.icon {
+    width: 60px;
+    height: 60px;
+}

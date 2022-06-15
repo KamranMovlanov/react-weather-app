@@ -1,13 +1,122 @@
 body {
-  margin: 0;
+  background: url('../public/jorge-sardinha-lT0kJYYFAVo-unsplash.jpg') no-repeat;
+  background-size: cover;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+input[type="text"] {
+  font-size: 16px;
+  font-weight: 600;
+  color: rgb(182, 182, 182);
+}
+
+/*============ Placeholder Start ============*/
+::-webkit-input-placeholder {
+  color: #9a9a9a;
+  font-size: 14px;
+  font-weight: 500;
+  opacity: 0.7;
+  /* Firefox */
+}
+
+::-moz-placeholder {
+  color: #9a9a9a;
+  font-size: 14px;
+  font-weight: 500;
+  opacity: 0.7;
+  /* Firefox */
+}
+
+:-ms-input-placeholder {
+  color: #9a9a9a;
+  font-size: 14px;
+  font-weight: 500;
+  opacity: 0.7;
+  /* Firefox */
+}
+
+::-ms-input-placeholder {
+  color: #9a9a9a;
+  font-size: 14px;
+  font-weight: 500;
+  opacity: 0.7;
+  /* Firefox */
+}
+
+::placeholder {
+  color: #e5d9c4;
+  font-size: 16px;
+  font-weight: 500;
+  opacity: 0.7;
+  /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #9a9a9a;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #9a9a9a;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/*============ Placeholder Start ============*/
+
+input[type="text"]:focus {
+  outline: none;
+  color: #e5d9c4;
+  font-size: 16px;
+  -webkit-transition: 0.25s;
+  -o-transition: 0.25s;
+  transition: 0.25s;
+}
+
+
+/*============ Scroll Bar Start ============*/
+/* Scroll 4 */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #76efff70;
+  background-image: -webkit-linear-gradient(45deg,
+      rgba(255, 255, 255, 0.3) 20%,
+      transparent 20%,
+      transparent 40%,
+      rgba(255, 255, 255, 0.3) 40%,
+      rgba(255, 255, 255, 0.3) 60%,
+      transparent 60%,
+      transparent 80%,
+      rgba(255, 255, 255, 0.3) 80%);
+  border-radius: 10px;
+}
+
+/*MOZ*/
+html {
+  overflow-y: scroll;
+  scrollbar-color: rgba(212, 168, 255, 0) rgba(253, 253, 253, 0);
+  scrollbar-width: none;
+}
+
+/*============ Scroll Bar End ============*/
