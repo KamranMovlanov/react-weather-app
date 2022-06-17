@@ -3,20 +3,20 @@
   justify-content: center;
   align-items: center;
   margin: auto;
-  margin-top: 0px;
-
+  margin-top: 30px;
 }
 
 .card {
   display: flex;
   flex-direction: column;
+  position: relative;
   overflow: scroll;
-  width: 92%;
+  width: 96%;
   padding: 2rem;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.7);
   color: rgb(220, 220, 220);
   font-size: 22px;
-  border-radius: 25px;
+  border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 10px 20px, rgba(0, 0, 0, 0.3) 0px 6px 6px;
 }
 
@@ -30,14 +30,14 @@
   border: none;
   position: relative;
   top: -18px;
-  background-color: rgba(14, 14, 14, .4);
+  background-color: rgba(215, 215, 215, .92);
   padding: 10px;
   border-radius: 10px;
   width: 320px;
   font-weight: 600;
   outline: none;
-  color: #e5d9c4;
-  box-shadow: rgb(40, 40, 40) 0px 2px 5px, rgba(78, 78, 78, 0.1) 0px 4px 5px;
+  color: #292929;
+  box-shadow: rgba(40, 40, 40, 0.4) 0px 2px 5px, rgba(78, 78, 78, 0.1) 0px 4px 5px;
   cursor: pointer;
   -webkit-transition: 0.25s;
   -o-transition: 0.25s;
@@ -46,5 +46,11 @@
 
 
 .searchBar:hover {
-  background-color: rgba(49, 49, 49, 0.8);
+  background-color: rgba(215, 215, 215, 1);
+}
+
+.timelineItem {
+  font-size: 25px;
+  font-weight: 700;
+  margin-bottom: 10px;
 }

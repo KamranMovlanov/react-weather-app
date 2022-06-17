@@ -1,22 +1,26 @@
 .weekData {
-    display: flex;
+    display: inline-flex;
+    position: absolute;
+    right: 0px;
+    flex-direction: row;
     justify-content: center;
+    align-items: flex-start;
+    padding: 10px;
 }
 
 .container {
-    width: 60px;
-    display: flex;
-    color: rgb(220, 220, 220);
+    width: 180px;
+    display: inline-flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     justify-content: center;
-    height: 150px;
-    margin-right: 50px;
-    padding: 35px;
-    border-radius: 10px;
-    background-color: rgba(35, 35, 35, 0.5);
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 10px 20px, rgba(0, 0, 0, 0.4) 0 5px 5px;
+    height: 180px;
+    margin: 6px;
+    padding: 13px;
+    border-radius: 100px;
+    background-color: rgba(12, 64, 128, 0.1);
+    box-shadow: rgba(50, 50, 93, 0.3) 0px 2px 5px -1px, rgba(0, 0, 0, .3) 0px 1px 3px -1px;
     cursor: pointer;
     -webkit-transition: 0.35s;
     -o-transition: 0.35s;
@@ -24,15 +28,29 @@
 }
 
 .container:hover {
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.3);
     box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
 }
 
 .date {
-    margin: 0;
+    margin-top: -5px;
     color: rgb(220, 220, 220);
+    font-size: 16px;
 }
 
 .temp {
-    color: rgb(189, 219, 243);
+    color: rgb(173, 195, 238);
+    font-size: 22px;
+    margin-top: -15px;
+}
+
+.flex {
+    display: inline-flex;
+    font-size: 15px;
+    color: rgb(180, 181, 181);
+    text-align: center;
+}
+
+.icon {
+    margin-right: -5px;
 }

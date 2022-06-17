@@ -1,60 +1,28 @@
-.searchContainer {
-    display: flex;
-    justify-content: center;
-}
-
-.searchBar {
-    border: none;
-    position: relative;
-    top: -18px;
-    background-color: rgba(14, 14, 14, .4);
-    padding: 10px;
-    border-radius: 10px;
-    width: 320px;
-    font-weight: 600;
-    outline: none;
-    color: #e5d9c4;
-    box-shadow: rgb(40, 40, 40) 0px 2px 5px, rgba(78, 78, 78, 0.1) 0px 4px 5px;
-    cursor: pointer;
-    -webkit-transition: 0.25s;
-    -o-transition: 0.25s;
-    transition: 0.25s;
-}
-
-
-.searchBar:hover {
-    background-color: rgba(49, 49, 49, 0.8);
-}
-
-/*============ Weather ==============*/
 .weatherContainer {
     position: relative;
     display: inline-flex;
     flex-direction: column;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-    margin: 10px 0 25px 0;
-    padding: 20px;
-    height: 300px;
-    border-radius: 15px;
-    background-color: rgba(39, 39, 39, 0.05);
-    overflow: scroll;
+    margin-bottom: 20px;
+    padding: 5px;
+    height: 20rem;
 }
 
 .temp {
-    color: rgb(189, 219, 243);
+    color: rgb(173, 195, 238);
     margin: 0;
+    font-size: 55px;
+    font-weight: 500;
 }
 
 .OtherInformation {
-    position: absolute;
-    top: 20px;
+    position: relative;
     padding: 20px;
-    left: 500px;
+    bottom: 280px;
+    left: 320px;
     display: inline-flex;
     flex-direction: column;
-    margin: auto;
-    width: 50%;
-    padding: 10px;
+    line-height: 1.8;
+    width: 40%;
     font-weight: 600;
     color: rgba(254, 254, 254, 0.5);
 }
@@ -69,10 +37,14 @@
     padding-bottom: 40px;
 }
 
+
 .flex {
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    margin-right: 30px;
+    width: 20%;
+    position: relative;
+    left: -17px;
+    top: -10px;
 }
 
 .humidity {
@@ -89,7 +61,57 @@
     padding-bottom: 10px;
 }
 
-.icon {
-    width: 60px;
-    height: 60px;
+
+.description {
+    font-weight: 600;
+}
+
+/*================ Timeline started ============== */
+.timelineContainer {
+    display: flex;
+    padding: 15px 0px;
+    height: 12rem;
+    width: 100%;
+    height: 100%;
+    overflow-x: scroll;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 2px, rgb(66, 78, 92) 0px 0px 0px 2px;
+    border-radius: 20px;
+}
+
+.container {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+    padding: 0px;
+    min-height: 160px;
+    min-width: 200px;
+    border-radius: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    -webkit-transition: 0.35s;
+    -o-transition: 0.35s;
+    transition: 0.35s;
+}
+
+.container:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+    box-shadow: rgba(3, 102, 214, 0.2) 0px 0px 0px 2px;
+}
+
+.flexTimeLine {
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+
+.dateTimeLine {
+    margin: 0 0 10px 0;
+}
+
+.tempTimeLine {
+    font-size: 28px;
+    color: rgb(173, 195, 238);
+    margin: 0;
 }
