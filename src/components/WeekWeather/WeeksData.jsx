@@ -1,30 +1,33 @@
 import React from 'react'
 import style from './WeeksData.module.css'
+import { daysOfTheWeek, isEmpty } from './../utilities/utilities';
 
 
 function WeeksData(props) {
-    function isEmpty(obj) {
-        for (let key in obj) {
-            return false;
-        }
-        return true;
-    }
-
     if (isEmpty(props.initialForecast)) {
         return (
-            <h1>Loading</h1>
+            <div>
+                <span className={style.loading}><img src='/loading-bar.png'></img></span>
+            </div>
         )
     }
+
+
+    const d = new Date()
+    const n = d.getDay()
+
 
     if (!isEmpty(props.searchForecast)) {
         return (
             <div className={style.weekData}>
-                <h4>Погода на 2 дня</h4>
+
                 {props.searchForecast.data.forecast.forecastday.filter((el, i) => i > 0).map((elem, i, arr) => {
                     return (
-                        <div key={i} className={style.container}>
-                            <h5 className={style.date}>{elem.date}</h5>
-                            <h2 className={style.temp}>{elem.day.avgtemp_c}°C</h2>
+                        <div key={i} className={style.container} onClick={() => { props.setToggle(i + 1) }}>
+                            <h5 className={style.date}>{i === 0 ? daysOfTheWeek([n + 1]) : daysOfTheWeek([n + 2])}</h5>
+                            <span className={style.temp}>{elem.day.mintemp_c > 0 ? "+" + Math.round(elem.day.mintemp_c) : "-" + Math.round(elem.day.mintemp_c)}°
+                                {elem.day.maxtemp_c > 0 ? "+" + Math.round(elem.day.maxtemp_c) : "-" + Math.round(elem.day.maxtemp_c)}°
+                            </span>
                             <div className={style.flex}>
                                 <img src={elem.day.condition.icon} alt="Icon" className={style.icon} />
                                 <div className={style.description}>{elem.day.condition.text}</div>
@@ -39,12 +42,13 @@ function WeeksData(props) {
     if (!isEmpty(props.initialForecast)) {
         return (
             <div className={style.weekData}>
-                <h4>Погода на 2 дня</h4>
                 {props.initialForecast.data.forecast.forecastday.filter((el, i) => i > 0).map((elem, i, arr) => {
                     return (
-                        <div key={i} className={style.container}>
-                            <h5 className={style.date}>{elem.date}</h5>
-                            <h2 className={style.temp}>{elem.day.avgtemp_c}°C</h2>
+                        <div key={i} className={style.container} onClick={() => { props.setToggle(i + 1) }}>
+                            <h5 className={style.date}>{i === 0 ? daysOfTheWeek([n + 1]) : daysOfTheWeek([n + 2])}</h5> {/*TODO: Сделай дату более наглядной*/}
+                            <span className={style.temp}>{elem.day.mintemp_c > 0 ? "+" + Math.round(elem.day.mintemp_c) : "-" + Math.round(elem.day.mintemp_c)}°
+                                {elem.day.maxtemp_c > 0 ? "+" + Math.round(elem.day.maxtemp_c) : "-" + Math.round(elem.day.maxtemp_c)}°
+                            </span>
                             <div className={style.flex}>
                                 <img src={elem.day.condition.icon} alt="Icon" className={style.icon} />
                                 <div className={style.description}>{elem.day.condition.text}</div>

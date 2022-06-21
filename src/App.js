@@ -5,8 +5,9 @@ import WeeksData from './components/WeekWeather/WeeksData';
 import { useState, useEffect } from 'react';
 import WeatherTimeline from './components/WeatherTimeline';
 
-const api = {
-  apiKey: "2f06bba7e5a14a04b81174742221506",
+
+export const api = {
+  apiKey: process.env.REACT_APP_APIKEY,
   baseURL: "https://api.weatherapi.com/v1/forecast.json?",
 }
 
@@ -14,30 +15,65 @@ const api = {
 function App() {
   const [query, setQuery] = useState('')
   const [searchWeatherData, setSearchWeatherData] = useState({})
-  const [weatherDataState, setWeatherData] = useState({})
+  const [currentWeather, setCurrentWeather] = useState({})
+  const [toggle, setToggle] = useState(0)
 
   useEffect(() => {
     const fetchData = async () => {
-      return await axios.get(`${api.baseURL}key=${api.apiKey}&q=Moscow&days=7&aqi=no&alerts=no`, { timeout: 1000, })
-        .then((response) => {
-          if (!response.ok) {
+      if (navigator.geolocation) {
+        // eslint-disable-next-line no-undef
+        navigator.geolocation.getCurrentPosition((position) => {
+          return axios.get(`${api.baseURL}key=${api.apiKey}&q=${position.coords.latitude},${position.coords.longitude}&lang=ru&days=7&aqi=yes&alerts=no`, { timeout: 1000, })
+            .then((response) => {
+              if (!response.ok) {
 
-            if (typeof response === 'object') return response;
-            if (typeof response === 'string') return JSON.parse(response)
-          }
+                if (typeof response === 'object') return response;
+                if (typeof response === 'string') return JSON.parse(response)
+              }
+            })
+            .then((data) => {
+              // console.log("DATA:", data.data.current.is_day ? document.body.style = 'background: white' : document.body.style = 'background: black')
+              // data.data.current.is_day ? document.body.style = "background: url('../public/Night.jpg')" : document.body.style = "background: url('../public/Night.jpg')"
+              console.log(data)
+              setCurrentWeather(data)
+            })
+        }, error => {
+          console.log('Error', error)
+          alert("Вы отменили определение местоположения, город по умолчанию Москва");
+          axios.get(`${api.baseURL}key=${api.apiKey}&q=Москва&lang=ru&days=7&aqi=yes&alerts=no`, { timeout: 1000, })
+            .then((response) => {
+              if (!response.ok) {
+                if (typeof response === 'object') return response;
+                if (typeof response === 'string') return JSON.parse(response)
+              }
+            })
+            .then((data) => {
+              setCurrentWeather(data)
+            })
         })
-        .then((data) => {
-          setWeatherData(data)
 
-        })
+      } else {
+        alert("Определение местоположения не поддерживается");
+        return await axios.get(`${api.baseURL}key=${api.apiKey}&q=Москва&lang=ru&days=7&aqi=yes&alerts=no`, { timeout: 1000, })
+          .then((response) => {
+            if (!response.ok) {
+              if (typeof response === 'object') return response;
+              if (typeof response === 'string') return JSON.parse(response)
+            }
+          })
+          .then((data) => {
+            setCurrentWeather(data)
+          })
+      }
     }
     fetchData()
-  }, [setWeatherData])
+  }, [setCurrentWeather])
 
 
   const search = (e) => {
+    {/*TODO: узнай можно ли так оставлять функцию функцию*/ }
     if (e.key === 'Enter') {
-      axios.get(`${api.baseURL}key=${api.apiKey}&q=${query}&days=7&aqi=no&alerts=no`, {
+      axios.get(`${api.baseURL}key=${api.apiKey}&q=${query}&lang=ru&days=7&aqi=yes&alerts=no`, {
         timeout: 1000,
       })
         .then((response) => {
@@ -47,7 +83,6 @@ function App() {
           }
         })
         .then((data) => {
-          console.log(data)
           setSearchWeatherData(data)
           setQuery('')
         })
@@ -59,12 +94,12 @@ function App() {
       <div className='card'>
         {/* <Search /> */}
         <div className='searchContainer'>
-          <input type="text" className='searchBar' onChange={e => setQuery(e.target.value)} onKeyPress={search} placeholder="Search city or country"></input>
+          <input type="text" className='searchBar' onChange={e => setQuery(e.target.value)} onKeyPress={search} placeholder="Поиск по городу или стране"></input>
         </div>
-        <Weather initialWeather={weatherDataState} searchResult={searchWeatherData} />
-        <WeeksData initialForecast={weatherDataState} searchForecast={searchWeatherData} />
-        <span className='timelineItem'>Hours</span>
-        <WeatherTimeline searchForecastHours={searchWeatherData} initialForecastHours={weatherDataState} />
+        <Weather initialWeather={currentWeather} searchResult={searchWeatherData} twoDaysWeather={toggle} setToggle={setToggle} />
+        <WeeksData initialForecast={currentWeather} searchForecast={searchWeatherData} setToggle={setToggle} />
+        <span className='timelineItem'>Погода по часам</span>
+        <WeatherTimeline searchForecastHours={searchWeatherData} initialForecastHours={currentWeather} twoDaysWeather={toggle} />
       </div>
     </div>
   );

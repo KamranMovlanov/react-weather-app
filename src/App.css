@@ -3,7 +3,7 @@
   justify-content: center;
   align-items: center;
   margin: auto;
-  margin-top: 30px;
+  margin-top: 15px;
 }
 
 .card {
@@ -12,45 +12,46 @@
   position: relative;
   overflow: scroll;
   width: 96%;
-  padding: 2rem;
-  background-color: rgba(0, 0, 0, 0.7);
-  color: rgb(220, 220, 220);
-  font-size: 22px;
-  border-radius: 20px;
+  padding: 1.7rem;
+  background-color: rgba(0, 0, 0, .82);
+  color: rgb(210, 210, 210);
+  font-size: 20px;
+  border-radius: 15px;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 10px 20px, rgba(0, 0, 0, 0.3) 0px 6px 6px;
 }
 
-
 .searchContainer {
-  display: flex;
+  display: inline-flex;
   justify-content: center;
 }
 
 .searchBar {
   border: none;
   position: relative;
-  top: -18px;
-  background-color: rgba(215, 215, 215, .92);
+  background-color: rgba(130, 130, 130, 0.15);
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 15px;
   width: 320px;
   font-weight: 600;
   outline: none;
   color: #292929;
-  box-shadow: rgba(40, 40, 40, 0.4) 0px 2px 5px, rgba(78, 78, 78, 0.1) 0px 4px 5px;
+  box-shadow: rgba(118, 118, 118, 0.4) 0px 0px 3px, rgba(165, 165, 165, 0.15) 0px 0px 5px;
   cursor: pointer;
   -webkit-transition: 0.25s;
   -o-transition: 0.25s;
   transition: 0.25s;
 }
 
-
 .searchBar:hover {
-  background-color: rgba(215, 215, 215, 1);
+  background-color: rgba(106, 106, 106, 0.1);
+}
+
+.searchBar:focus {
+  background-color: rgba(106, 106, 106, 0.1);
 }
 
 .timelineItem {
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 700;
-  margin-bottom: 10px;
+  padding: 10px;
 }
