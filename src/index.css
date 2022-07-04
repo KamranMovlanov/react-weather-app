@@ -1,6 +1,11 @@
 body {
-  background: url('../public/federico-bottos-obQacWYxB1I-unsplash.jpg') no-repeat;
-  background-size: cover;
+  background-color: #98b1fe;
+background-image: -webkit-linear-gradient(180deg, #98c1fe 0%, #d7c6fa 50%, #e6e3fa 100%);
+background-image: -moz-linear-gradient(180deg, #98c1fe 0%, #d7c6fa 50%, #e6e3fa 100%);
+background-image: -o-linear-gradient(180deg, #98c1fe 0%, #d7c6fa 50%, #e6e3fa 100%);
+background-image: linear-gradient(180deg, #98c1fe 0%, #d2befa 50%, #e6e3fa 100%);
+
+
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;

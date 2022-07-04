@@ -2,8 +2,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: auto;
-  margin-top: 15px;
 }
 
 .card {
@@ -11,29 +9,32 @@
   flex-direction: column;
   position: relative;
   overflow: scroll;
-  width: 96%;
-  padding: 1.7rem;
-  background-color: rgba(0, 0, 0, .82);
-  color: rgb(210, 210, 210);
-  font-size: 20px;
-  border-radius: 15px;
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 10px 20px, rgba(0, 0, 0, 0.3) 0px 6px 6px;
+  width: 100%;
+  padding: .8rem;
+  background-color: rgba(0, 0, 0, 0.76);
+  /* background: url("./../public/federico-bottos-obQacWYxB1I-unsplash.jpg"); */
+  color: rgb(201, 201, 201);
+  border-radius: 12px;
+  font-weight: 500;
+  box-shadow: rgba(0, 0, 0, 0.7) 0px 10px 20px, rgba(0, 0, 0, .5) 0px 6px 10px;
 }
 
 .searchContainer {
+  position: relative;
   display: inline-flex;
   justify-content: center;
+  top: 10px;
 }
 
 .searchBar {
   border: none;
-  position: relative;
   background-color: rgba(130, 130, 130, 0.15);
   padding: 10px;
-  border-radius: 15px;
-  width: 320px;
+  border-radius: 10px;
+  width: 250px;
   font-weight: 600;
   outline: none;
+  margin-right: 10px;
   color: #292929;
   box-shadow: rgba(118, 118, 118, 0.4) 0px 0px 3px, rgba(165, 165, 165, 0.15) 0px 0px 5px;
   cursor: pointer;
@@ -51,7 +52,74 @@
 }
 
 .timelineItem {
-  font-size: 20px;
-  font-weight: 700;
+  display: flex;
+  font-size: 18px;
+  font-weight: 600;
   padding: 10px;
+}
+
+.timeLineClockIcon {
+  max-width: 30px;
+  padding-left: 5px;
+  align-items: center;
+}
+
+.searchBtn{
+  outline: none;
+  border: none;
+  background-color: rgba(130, 130, 130, 0.3);
+  border-radius: 12px;
+  color: rgb(197, 197, 197);
+  cursor: pointer;
+  margin-right: 10px;
+  -webkit-transition: 0.25s;
+  -o-transition: 0.25s;
+  transition: 0.25s;
+}
+
+.searchBtn:hover{
+  background-color: rgba(130, 130, 130, 0.5);
+}
+
+.locationBtn{
+  outline: none;
+  border: none;
+  background-color: rgba(130, 130, 130, 0.3);
+  border-radius: 12px;
+  color: rgb(197, 197, 197);
+  cursor: pointer;
+  -webkit-transition: 0.25s;
+  -o-transition: 0.25s;
+  transition: 0.25s;
+}
+
+.locationBtn:hover{
+  background-color: rgba(130, 130, 130, 0.5);
+}
+
+@media(max-width: 1300px){ 
+	.card{
+    min-width: 100vw;
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.75);
+	}
+}
+
+@media(max-width: 992px){ 
+	.card{
+    min-width: 100vw;
+    min-height: 100vh;
+	}
+} 
+
+@media(max-width: 767px){ 
+.App{
+  margin: -10px;
+}
+
+	.card{
+		min-width: 100vw;
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.75);
+	}
 }
