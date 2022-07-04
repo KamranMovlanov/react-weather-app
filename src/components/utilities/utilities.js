@@ -22,3 +22,4 @@ export const daysOfTheWeek = (n) => {
 const d = new Date()
 const n = d.getDay()
 
+

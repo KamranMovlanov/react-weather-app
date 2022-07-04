@@ -23,23 +23,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-
-public/aleksandar-jason-a562ZEFKW8I-unsplash.jpg
-public/alessio-soggetti-cfKC0UOZHJo-unsplash.jpg
-public/branislav-milosevic-_i-iUhgXUBQ-unsplash.jpg
-public/cesar-couto-Kg2M24Pr9aU-unsplash.jpg
-public/cesar-couto-pC2xOplxsVs-unsplash(1).jpg
-public/daniel-ramirez-q4TfWtnz_xw-unsplash.jpg
-public/eberhard-grossgasteiger-j18EE7RtnvY-unsplash.jpg
-public/federico-bottos-obQacWYxB1I-unsplash.jpg
-public/Forest.jpg
-public/iccup-xNtwmcRP-gw-unsplash.jpg
-public/jorge-sardinha-lT0kJYYFAVo-unsplash.jpg
-public/louis-reed-a-xbE4Tye5c-unsplash.jpg
-public/mads-schmidt-rasmussen-6YmzwamGzCg-unsplash.jpg
-public/micha-sager-lsDJyu_uJhw-unsplash.jpg
-public/parrish-freeman-K2W8TIxcuko-unsplash.jpg
-public/resul-mentes-DbwYNr8RPbg-unsplash.jpg
-public/sirisvisual-b2Cm0AD0QqE-unsplash.jpg
-public/thomas-lefebvre-7blkqyRno4Y-unsplash.jpg
-public/willian-justen-de-vasconcellos-_MMP5j_fCqw-unsplash.jpg
+*.jpg
+*.png
+*.svg

@@ -1,6 +1,6 @@
 import React from 'react'
 import style from './Components.module.css'
-import { isEmpty } from './utilities/utilities';
+import { isEmpty, daysOfTheWeek } from './utilities/utilities';
 
 
 function WeatherTimeline(props) {
@@ -14,11 +14,33 @@ function WeatherTimeline(props) {
     //     }
     // }, []);
 
+    const d = new Date()
+    const n = d.getDay()
+
+    const tempClassColor = (param) => {
+        if(param <= -10){
+            return style.tempTimeLineVeryCold
+        }
+        if(param <= 0){
+            return style.tempTimeLineCold
+        }
+        if(param <= 15){
+            return style.tempTimeLine
+        }
+        if(param <= 25){
+            return style.tempTimeLineAverageDegrees
+        }
+        if(param <= 35){
+            return style.tempTimeLineHighDegrees
+        }
+        if(param > 35){
+            return style.tempTimeLineExtremeDegrees
+        }
+    }
+
     if (isEmpty(props.initialForecastHours)) {
         return (
-            <div>
-                <span className={style.loading}><img src='/loading-bar.png'></img></span>
-            </div>
+            <div className={style.loader}></div>
         )
     }
 
@@ -29,36 +51,85 @@ function WeatherTimeline(props) {
                     props.twoDaysWeather > 0 ?
                         props.searchForecastHours.data.forecast.forecastday.filter((el, i) => i === props.twoDaysWeather).map((elem, i) => {
                             return (
-                                elem.hour.map((element, index) => {
+                                elem.hour.filter(el =>
+                                    parseInt(el.time.slice(11, -3)) > parseInt(props.searchForecastHours.data.current.last_updated.slice(11, -3))
+                                ).map((element, index, arr) => {
+                                    console.log("Index: ", arr.length - 1, "Toggle: ", props.twoDaysWeather)
+                                    console.log("i: ", i)
                                     return (
-                                        <div key={index} className={style.container}>
-                                            <span className={style.dateTimeLine}><img src='/clock.png'></img> {element.time.slice(-5)}</span>
-                                            <h3 className={style.tempTimeLine}>{element.temp_c > 0 ? "+" + Math.round(element.temp_c) : Math.round(element.temp_c)}°</h3>
-                                            <span className={style.windTimeLine} > <img src='/wind2.png'></img> {element.wind_kph} км/ч</span>
-                                            <div className={style.flexTimeLine}>
-                                                <img src={element.condition.icon} alt="Icon" className={style.iconTimeLine} />
-                                                <div className={style.descriptionTimeLine}>{element.condition.text}</div>
+                                        <>
+                                            <div key={index} className={style.container}>
+                                                <span className={style.dateTimeLine}><img src='/clock.png' alt='clock icon'></img>&nbsp; {element.time.slice(-5)}</span>
+                                                <h3 className={tempClassColor(Math.round(elem.temp_c))}>{element.temp_c > 0 ? "+" + Math.round(element.temp_c) : Math.round(element.temp_c)}°</h3>
+                                                <span className={style.windTimeLine} > <img src='/wind2.png' alt='wind icon'></img> {element.wind_kph} км/ч</span>
+                                                <div className={style.flexTimeLine}>
+                                                    <img src={element.condition.icon} alt="Icon" className={style.iconTimeLine} />
+                                                    <div className={style.descriptionTimeLine}>{element.condition.text}</div>
+                                                </div>
                                             </div>
-                                        </div>
+                                            {index > (arr.length - 2) ?
+                                                props.searchForecastHours.data.forecast.forecastday[props.twoDaysWeather].hour.map((element, index) => {
+                                                    console.log("ELEMENT: ", i)
+                                                    return (
+                                                        <div key={index} className={element.time.slice(10, -3).trim() !== "00" ? style.container : style.containerNextDay}>
+                                                            <span className={element.time.slice(10, -3).trim() !== "00" ? style.dateTimeLine : style.dateTimeLineNextDay}>
+                                                                <img src='/clock.png' alt='clock icon'></img>&nbsp;
+                                                                {element.time.slice(10, -3).trim() !== "00" ? element.time.slice(-5) : daysOfTheWeek([n + 1]) + element.time}</span>
+                                                            <h3 className={tempClassColor(Math.round(elem.temp_c))}>{Math.floor(element.temp_c) > 0 ? "+" + Math.round(element.temp_c) : Math.round(element.temp_c)}°</h3>
+                                                            <span className={style.windTimeLine} > <img src='./wind.svg' alt="icon"></img> {element.wind_kph} км/ч</span>
+                                                            <div className={style.flexTimeLine}>
+                                                                <img src={element.condition.icon} alt="Icon" className={style.iconTimeLine} />
+                                                                <div className={style.descriptionTimeLine}>{element.condition.text}</div>
+                                                            </div>
+                                                        </div>
+                                                    )
+                                                })
+                                                :
+                                                ''
+                                            }
+                                        </>
                                     )
                                 })
 
                             )
                         })
                         :
-                        props.searchForecastHours.data.forecast.forecastday[0].hour.map((elem, i) => {
-                            return (
-                                <div key={i} className={style.container}>
-                                    <span className={style.dateTimeLine}><img src='/clock.png'></img> {elem.time.slice(-5)}</span>
-                                    <h3 className={style.tempTimeLine}>{elem.temp_c > 0 ? "+" + Math.round(elem.temp_c) : Math.round(elem.temp_c)}°</h3>
-                                    <span className={style.windTimeLine}> <img src='/wind2.png'></img> {elem.wind_kph} км/ч</span>
-                                    <div className={style.flexTimeLine}>
-                                        <img src={elem.condition.icon} alt="Icon" className={style.iconTimeLine} />
-                                        <div className={style.descriptionTimeLine}>{elem.condition.text}</div>
-                                    </div>
-                                </div>
-                            )
-                        })}
+                        props.searchForecastHours.data.forecast.forecastday[0].hour
+                            .filter((el, index) => parseInt(el.time.slice(11, -3)) > parseInt(props.searchForecastHours.data.current.last_updated.slice(11, -3)))
+                            .map((elem, i, arr) => {
+                                return (
+                                    <>
+                                        <div key={i} className={style.container}>
+                                            <span className={style.dateTimeLine}><img src='/clock.png' alt='clock icon'></img> {elem.time.slice(-5)}</span>
+                                            <h3 className={tempClassColor(Math.round(elem.temp_c))}>{elem.temp_c > 0 ? "+" + Math.round(elem.temp_c) : Math.round(elem.temp_c)}°</h3>
+                                            <span className={style.windTimeLine}> <img src='./wind.svg' alt="icon"></img> {elem.wind_kph} км/ч</span>
+                                            <div className={style.flexTimeLine}>
+                                                <img src={elem.condition.icon} alt="Icon" className={style.iconTimeLine} />
+                                                <div className={style.descriptionTimeLine}>{elem.condition.text}</div>
+                                            </div>
+                                        </div>
+                                        {i > (arr.length - 2) ?
+                                            props.searchForecastHours.data.forecast.forecastday[1].hour.map((element, index) => {
+                                                return (
+                                                    <div key={index} className={element.time.slice(10, -3).trim() !== "00" ? style.container : style.containerNextDay}>
+                                                        <span className={element.time.slice(10, -3).trim() !== "00" ? style.dateTimeLine : style.dateTimeLineNextDay}>
+                                                            <img src='/clock.png' alt='clock icon'></img>&nbsp;
+                                                            {element.time.slice(10, -3).trim() !== "00" ? element.time.slice(-5) : daysOfTheWeek([n + 1]) + element.time}</span>
+                                                        <h3 className={tempClassColor(Math.round(elem.temp_c))}>{Math.floor(element.temp_c) > 0 ? "+" + Math.round(element.temp_c) : Math.round(element.temp_c)}°</h3>
+                                                        <span className={style.windTimeLine} > <img src='./wind.svg' alt="icon"></img> {element.wind_kph} км/ч</span>
+                                                        <div className={style.flexTimeLine}>
+                                                            <img src={element.condition.icon} alt="Icon" className={style.iconTimeLine} />
+                                                            <div className={style.descriptionTimeLine}>{element.condition.text}</div>
+                                                        </div>
+                                                    </div>
+                                                )
+                                            })
+                                            :
+                                            ''
+                                        }
+                                    </>
+                                )
+                            })}
             </div>)
     }
 
@@ -69,36 +140,86 @@ function WeatherTimeline(props) {
                     props.twoDaysWeather > 0 ?
                         props.initialForecastHours.data.forecast.forecastday.filter((el, i) => i === props.twoDaysWeather).map((elem, i) => {
                             return (
-                                elem.hour.map((element, index) => {
+                                elem.hour.filter(el =>
+                                    parseInt(el.time.slice(11, -3)) > parseInt(props.initialForecastHours.data.current.last_updated.slice(11, -3))
+                                ).map((element, index, arr) => {
+                                    
                                     return (
-                                        <div key={index} className={style.container}>
-                                            <span className={style.dateTimeLine}><img src='/clock.png'></img> {element.time.slice(-5)}</span>
-                                            <h3 className={style.tempTimeLine}>{element.temp_c > 0 ? "+" + Math.round(element.temp_c) : Math.round(element.temp_c)}°</h3>
-                                            <span className={style.windTimeLine} > <img src='/wind2.png'></img> {element.wind_kph} км/ч</span>
-                                            <div className={style.flexTimeLine}>
-                                                <img src={element.condition.icon} alt="Icon" className={style.iconTimeLine} />
-                                                <div className={style.descriptionTimeLine}>{element.condition.text}</div>
+                                        <>
+                                            <div key={index} className={style.container}>
+                                                <span className={style.dateTimeLine}><img src='/clock.png' alt='clock icon'></img> {element.time.slice(-5)}</span>
+                                                <h3 className={tempClassColor(Math.round(elem.temp_c))}>{element.temp_c > 0 ? "+" + Math.round(element.temp_c) : Math.round(element.temp_c)}°</h3>
+                                                <span className={style.windTimeLine} > <img src='./wind.svg' alt="icon"></img> {element.wind_kph} км/ч</span>
+                                                <div className={style.flexTimeLine}>
+                                                    <img src={element.condition.icon} alt="Icon" className={style.iconTimeLine} />
+                                                    <div className={style.descriptionTimeLine}>{element.condition.text}</div>
+                                                </div>
                                             </div>
-                                        </div>
+                                            {index > (arr.length - 2) ?
+                                                props.initialForecastHours.data.forecast.forecastday[props.twoDaysWeather].hour.map((element, index) => {
+                                                    return (
+                                                        <div key={index} className={element.time.slice(10, -3).trim() !== "00" ? style.container : style.containerNextDay}>
+                                                            <span className={element.time.slice(10, -3).trim() !== "00" ? style.dateTimeLine : style.dateTimeLineNextDay}>
+                                                                <img src='/clock.png' alt='clock icon'></img>&nbsp;
+                                                                {element.time.slice(10, -3).trim() !== "00" ? element.time.slice(-5) : daysOfTheWeek([n + 1]) + element.time}</span>
+                                                            <h3 className={tempClassColor(Math.round(elem.temp_c))}>{Math.floor(element.temp_c) > 0 ? "+" + Math.round(element.temp_c) : Math.round(element.temp_c)}°</h3>
+                                                            <span className={style.windTimeLine} > <img src='./wind.svg' alt="icon"></img> {element.wind_kph} км/ч</span>
+                                                            <div className={style.flexTimeLine}>
+                                                                <img src={element.condition.icon} alt="Icon" className={style.iconTimeLine} />
+                                                                <div className={style.descriptionTimeLine}>{element.condition.text}</div>
+                                                            </div>
+                                                        </div>
+                                                    )
+                                                })
+                                                :
+                                                ''
+                                            }
+                                        </>
                                     )
                                 })
-
                             )
                         })
                         :
-                        props.initialForecastHours.data.forecast.forecastday[0].hour.map((elem, i) => {
-                            return (
-                                <div key={i} className={style.container}>
-                                    <span className={style.dateTimeLine}><img src='/clock.png'></img> {elem.time.slice(-5)}</span>
-                                    <h3 className={style.tempTimeLine}>{elem.temp_c > 0 ? "+" + Math.round(elem.temp_c) : Math.round(elem.temp_c)}°</h3>
-                                    <span className={style.windTimeLine} > <img src='/wind2.png'></img> {elem.wind_kph} км/ч</span>
-                                    <div className={style.flexTimeLine}>
-                                        <img src={elem.condition.icon} alt="Icon" className={style.iconTimeLine} />
-                                        <div className={style.descriptionTimeLine}>{elem.condition.text}</div>
-                                    </div>
-                                </div>
-                            )
-                        })
+                        props.initialForecastHours.data.forecast.forecastday[0].hour.filter(el =>
+                            parseInt(el.time.slice(11, -3)) >= parseInt(props.initialForecastHours.data.current.last_updated.slice(11, -3))
+                        )
+                            .map((elem, i, arr) => {
+                                
+                                return (
+                                    <>
+                                        <div key={i} className={style.container}>
+                                            <span className={style.dateTimeLine}><img src='/clock.png' alt='clock icon'></img> {elem.time.slice(10, -3) !== "00" ? elem.time.slice(-5) : elem.time}</span>
+                                            <h3 className={tempClassColor(Math.round(elem.temp_c))}>
+                                                {elem.temp_c > 0 ? "+" + Math.round(elem.temp_c) : Math.round(elem.temp_c)}°</h3>
+                                            <span className={style.windTimeLine} > <img src='./wind.svg' alt="icon"></img> {elem.wind_kph} км/ч</span>
+                                            <div className={style.flexTimeLine}>
+                                                <img src={elem.condition.icon} alt="Icon" className={style.iconTimeLine} />
+                                                <div className={style.descriptionTimeLine}>{elem.condition.text}</div>
+                                            </div>
+                                        </div>
+                                        {i > (arr.length - 2) ?
+                                        
+                                            props.initialForecastHours.data.forecast.forecastday[1].hour.map((element, index) => {
+                                                return (
+                                                    <div key={index} className={element.time.slice(10, -3).trim() !== "00" ? style.container : style.containerNextDay}>
+                                                        <span className={element.time.slice(10, -3).trim() !== "00" ? style.dateTimeLine : style.dateTimeLineNextDay}>
+                                                            <img src='/clock.png' alt='clock icon'></img>&nbsp;
+                                                            {element.time.slice(10, -3).trim() !== "00" ? element.time.slice(-5) : daysOfTheWeek([n + 1])+ " " + element.time}</span>
+                                                        <h3 className={tempClassColor(Math.round(elem.temp_c))}>{Math.floor(element.temp_c) > 0 ? "+" + Math.round(element.temp_c) : Math.round(element.temp_c)}°</h3>
+                                                        <span className={style.windTimeLine} > <img src='./wind.svg' alt="icon"></img> {element.wind_kph} км/ч</span>
+                                                        <div className={style.flexTimeLine}>
+                                                            <img src={element.condition.icon} alt="Icon" className={style.iconTimeLine} />
+                                                            <div className={style.descriptionTimeLine}>{element.condition.text}</div>
+                                                        </div>
+                                                    </div>
+                                                )
+                                            })
+                                            :
+                                            ''
+                                        }
+                                    </>
+                                )
+                            })
                 }
             </div>
         )
