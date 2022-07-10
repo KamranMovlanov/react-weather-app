@@ -1,0 +1,207 @@
+/*================ Timeline started ============== */
+.timelineContainer {
+    display: flex;
+    padding: 10px 0px;
+    width: 100%;
+    height: 100%;
+    overflow-x: scroll;
+    /* box-shadow: rgba(0, 0, 0, .32) inset 0px 0px 12px; */
+    /* box-shadow: rgb(29, 29, 29, 0.9) 0px 0px 15px 0px inset; */
+    border-radius: 12px;
+}
+
+.container {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+    padding: 0px;
+    min-height: 160px;
+    min-width: 200px;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 20px;
+    -webkit-transition: 0.35s;
+    -o-transition: 0.35s;
+    transition: 0.35s;
+}
+
+.container:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+    box-shadow: rgba(3, 102, 214, 0.2) 0px 0px 0px 2px;
+}
+
+
+.containerNextDay {
+    display: inline-flex;
+    color: rgba(176, 176, 238, 0.85);
+    box-shadow: rgba(0, 0, 0, .25) inset 0px 0px 7px;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    padding: 5px;
+    min-height: 160px;
+    min-width: 200px;
+    font-size: 16px;
+    cursor: pointer;
+    border-left: #2a4e67 1px solid;
+    border-right: #2a4e67 1px solid;
+    border-radius: 20px;
+    -webkit-transition: 0.35s;
+    -o-transition: 0.35s;
+    transition: 0.35s;
+}
+
+.containerNextDay>div {
+    color: white;
+}
+
+.containerNextDay:hover {
+    background-color: rgba(117, 115, 115, 0.4);
+    box-shadow: rgba(3, 102, 214, 0.2) 0px 0px 0px 2px;
+}
+
+
+.loader {
+    animation: spinningColor 1.5s ease-in-out infinite;
+    border: 5px double #a896fd;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+@keyframes spinningColor {
+    0% {
+        transform: rotate(360deg);
+        border-top: 5px dashed #f56682;
+        border-bottom: 5px dashed #387eff;
+    }
+
+    25% {
+        border-top: 5px dashed #f591a6;
+        border-bottom: 5px dashed #6da7f7;
+    }
+
+    50% {
+        border-top: 5px dashed #fd878e;
+        border-bottom: 5px dashed #4ba3ff;
+    }
+
+    75% {
+        border-top: 5px dashed #f57f8f;
+        border-bottom: 5px dashed #569dff;
+    }
+
+    100% {
+        border-top: 5px dashed #f56682;
+        border-bottom: 5px dashed #387eff;
+    }
+}
+
+.flexTimeLine {
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+
+.dateTimeLine {
+    margin: 0 0 10px 0;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.dateTimeLine>img {
+    display: inline-flex;
+    max-width: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.dateTimeLineNextDay {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.dateTimeLineNextDay>img {
+    display: inline-flex;
+    max-width: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+/*============== TEMP ===================*/
+.tempTimeLineVeryCold{
+    color: rgb(135, 181, 229);
+    font-size: 25px;
+    margin: 0px;
+}
+
+.tempTimeLineCold {
+    color: rgb(190, 224, 233);
+    font-size: 25px;
+    margin: 0px;
+}
+
+.tempTimeLine {
+    color: rgb(234, 234, 207);
+    font-size: 25px;
+    margin: 0px;
+}
+
+.tempTimeLineAverageDegrees {
+    color: rgb(229, 206, 153);
+    font-size: 25px;
+    margin: 0px;
+}
+
+.tempTimeLineHighDegrees {
+    color: rgb(234, 172, 90);
+    font-size: 25px;
+    margin: 0px;
+}
+
+.tempTimeLineExtremeDegrees {
+    color: rgb(255, 117, 42);
+    font-size: 25px;
+    margin: 0px;
+}
+
+/*===================================================*/
+
+.windTimeLine {
+    font-size: 20px;
+    color: rgb(174, 174, 174);
+    text-align: center;
+    margin-top: 15px;
+}
+
+.windTimeLine>img {
+    width: 20px;
+}
+
+/*Mobile*/
+
+@media(max-width: 767px){ 
+    /*================ Timeline started ============== */
+.timelineContainer {
+    margin: 0 8px ;
+    box-shadow: rgba(0, 0, 0, .4) inset 0px 0px 15px;
+    border-radius: 15px;
+}
+
+.container {
+    margin-right: -40px;
+    min-height: 160px;
+    min-width: 220px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 0;
+    -webkit-transition: 0.35s;
+    -o-transition: 0.35s;
+    transition: 0.35s;
+}
+
+    }

@@ -1,0 +1,69 @@
+.searchContainer {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    top: 10px;
+  }
+  
+  .searchBar {
+    border: none;
+    background-color: rgba(130, 130, 130, 0.15);
+    padding: 10px;
+    border-radius: 10px;
+    width: 250px;
+    font-weight: 600;
+    outline: none;
+    margin-right: 10px;
+    color: #292929;
+    box-shadow: rgba(118, 118, 118, 0.4) 0px 0px 3px, rgba(165, 165, 165, 0.15) 0px 0px 5px;
+    cursor: pointer;
+    -webkit-transition: 0.25s;
+    -o-transition: 0.25s;
+    transition: 0.25s;
+  }
+  
+  .searchBar:hover {
+    background-color: rgba(106, 106, 106, 0.1);
+  }
+  
+  .searchBar:focus {
+    background-color: rgba(106, 106, 106, 0.1);
+  }
+  
+  
+  .searchBtn{
+    outline: none;
+    border: none;
+    background-color: rgba(130, 130, 130, 0.3);
+    border-radius: 12px;
+    color: rgb(197, 197, 197);
+    cursor: pointer;
+    min-height: 40px;
+    min-width: 40px;
+    margin-right: 10px;
+    -webkit-transition: 0.25s;
+    -o-transition: 0.25s;
+    transition: 0.25s;
+  }
+  
+  .searchBtn:hover{
+    background-color: rgba(130, 130, 130, 0.5);
+  }
+  
+  .locationBtn{
+    outline: none;
+    border: none;
+    background-color: rgba(130, 130, 130, 0.3);
+    border-radius: 12px;
+    min-height: 40px;
+    min-width: 40px;
+    color: rgb(197, 197, 197);
+    cursor: pointer;
+    -webkit-transition: 0.25s;
+    -o-transition: 0.25s;
+    transition: 0.25s;
+  }
+  
+  .locationBtn:hover{
+    background-color: rgba(130, 130, 130, 0.5);
+  }

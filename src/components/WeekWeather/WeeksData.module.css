@@ -2,7 +2,7 @@
     display: inline-flex;
     position: absolute;
     right: 3px;
-    top: 3px;
+    top: 50px;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;

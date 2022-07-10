@@ -41,7 +41,7 @@ function WeeksData(props) {
             <div className={style.weekData}>
 
                 {props.searchForecast.data.forecast.forecastday.filter((el, i) => i > 0).map((elem, i, arr) => {
-                    console.log(elem.day)
+                    
                     return (
                         <div key={i} className={style.container} onClick={() => { props.setToggle(i + 1) }}>
                             <h5 className={style.date}>{i === 0 ? daysOfTheWeek([moment().add(1, 'days').days()]) : daysOfTheWeek([moment().add(+ 2, 'days').days()])}</h5>
