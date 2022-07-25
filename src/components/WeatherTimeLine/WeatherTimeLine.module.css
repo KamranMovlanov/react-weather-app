@@ -69,6 +69,7 @@
     border: 5px double #a896fd;
     border-radius: 50%;
     width: 50px;
+    margin: 30px 20px;
     height: 50px;
 }
 
@@ -187,16 +188,18 @@
 @media(max-width: 767px){ 
     /*================ Timeline started ============== */
 .timelineContainer {
-    margin: 0 8px ;
-    box-shadow: rgba(0, 0, 0, .4) inset 0px 0px 15px;
-    border-radius: 15px;
+    width: 97%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    box-shadow: rgba(0, 0, 0, .3) inset 0px 0px 15px;
+    border-radius: 25px;
 }
 
 .container {
-    margin-right: -40px;
+    margin-right: 10px;
     min-height: 160px;
-    min-width: 220px;
-    font-size: 14px;
+    width: 100%;
+    font-size: 13px;
     cursor: pointer;
     border-radius: 0;
     -webkit-transition: 0.35s;
@@ -204,4 +207,29 @@
     transition: 0.35s;
 }
 
+.dateTimeLine>img {
+    max-width: 18px;    
+}
+.dateTimeLine {
+    font-size: 18px;
+}
+
+.dateTimeLineNextDay>img {
+    max-width: 18px;
+}
+
+.windTimeLine {
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.windTimeLine>img {
+    width: 18px;
+}
+
+.iconTimeLine{
+    width: 45px;
+    height: 45px;
+}
     }

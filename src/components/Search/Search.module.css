@@ -67,3 +67,12 @@
   .locationBtn:hover{
     background-color: rgba(130, 130, 130, 0.5);
   }
+
+  /*Mobile*/
+
+@media(max-width: 767px) {
+  .searchBar {
+    width: 240px;
+  }
+
+}
