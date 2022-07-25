@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import style from "./ErrorBoundaryNotFound.module.css.module.css";
+import style from "./ErrorBoundaryNotFound.module.css";
 
 class ErrorBoundaryNotFound extends Component {
   constructor(props) {
@@ -19,13 +19,6 @@ class ErrorBoundaryNotFound extends Component {
 
   render() {
     if (this.state.hasError) {
-      console.log("Language Err:", this.props);
-      this.props.children[1].props.setErrStatus(true);
-
-      const errСancellation = () => {
-        return this.setState({ hasError: false });
-      };
-
       return (
         <div className={style.AlternativeSearchResult}>
           <Link className={style.currentWeatherBtn} reloadDocument to={"/current"}>
