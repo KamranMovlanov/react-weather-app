@@ -187,6 +187,7 @@ function GlobalWeatherPage(props) {
               calcOfDaylightHours={calcOfDaylightHours}
               airQualityClassColor={airQualityClassColor}
               airQualityDetector={airQualityDetector}
+              setErrStatus={props.setErrStatus}
             />
 
             <Currency

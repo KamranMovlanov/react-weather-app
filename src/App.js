@@ -33,7 +33,7 @@ function App() {
   const [currentWeather, setCurrentWeather] = useState({})
   const [ipData, setIpData] = useState({})
   const [toggle, setToggle] = useState(0)
-  // const [errStatus, setErrStatus] = useState(false)
+  const [errStatus, setErrStatus] = useState(false)
 
   //Changing url-addr
   const navigate = useNavigate()
@@ -253,10 +253,10 @@ function App() {
         <Search query={query} search={search} locationWeather={locationWeather} setQuery={setQuery} />
         <ErrorBoundary >
           <GlobalWeatherPage initialWeather={currentWeather} setSearchWeatherData={setSearchWeatherData} searchResult={searchWeatherData} twoDaysWeather={toggle}
-            setToggle={setToggle} ipData={ipData} exchangeRate={exchangeRate} />
+            setToggle={setToggle} ipData={ipData} exchangeRate={exchangeRate} setErrStatus={setErrStatus} />
         </ErrorBoundary>
-        <TwoDaysWeather initialForecast={currentWeather} searchForecast={searchWeatherData} setToggle={setToggle} />
-        <WeatherTimeline searchForecastHours={searchWeatherData} initialForecastHours={currentWeather} twoDaysWeather={toggle} />
+        <TwoDaysWeather initialForecast={currentWeather} searchForecast={searchWeatherData} setToggle={setToggle} errStatus={errStatus} />
+        <WeatherTimeline searchForecastHours={searchWeatherData} initialForecastHours={currentWeather} twoDaysWeather={toggle} errStatus={errStatus} />
       </div>
     </div >
   );

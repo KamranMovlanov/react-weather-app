@@ -32,7 +32,7 @@ function WeatherTimeline(props) {
     }
   };
 
-  if (!isEmpty(props.searchForecastHours)) {
+  if (!isEmpty(props.searchForecastHours) && !props.errStatus) {
     return (
       <footer className={style.timelineContainer}>
         {props.twoDaysWeather > 0
@@ -145,7 +145,7 @@ function WeatherTimeline(props) {
     );
   }
 
-  if (!isEmpty(props.initialForecastHours)) {
+  if (!isEmpty(props.initialForecastHours) && !props.errStatus) {
     return (
       <footer className={style.timelineContainer}>
         {props.twoDaysWeather > 0
