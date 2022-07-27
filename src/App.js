@@ -41,7 +41,7 @@ function App() {
     if (!isEmpty(ipData) && !isEmpty(currentWeather)) {
       const w = window.innerWidth;
       const h = window.innerHeight;
-      window.document.getElementsByTagName("body")[0].style.background = `url(https://source.unsplash.com/random/${w}*${h}/?Wallpapers,${currentWeather.data.current.is_day ? "colors" : "space"}) center`
+      window.document.getElementsByTagName("body")[0].style.background = `url(https://source.unsplash.com/random/${w}*${h}/?Wallpapers,${currentWeather.data.current.is_day ? "colors" : "colors"}) center`
       window.document.getElementsByTagName("body")[0].style.backgroundRepeat = 'no-repeat'
       window.document.getElementsByTagName("body")[0].style.backgroundSize = 'cover'
     }
