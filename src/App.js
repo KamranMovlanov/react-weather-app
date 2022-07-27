@@ -34,7 +34,7 @@ function App() {
   const [errStatus, setErrStatus] = useState(false)
 
   //Changing url-addr
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
 
   //Unsplash background
   useEffect(() => {
@@ -54,7 +54,7 @@ function App() {
       return await axios.get(`${ipAddrApi.baseURL}?api_key=${ipAddrApi.apiKey}&`, { timeout: 3000, })
         .then((data) => {
           setIpData(data)
-          navigate("/current", { replace: true })
+          // navigate("/current", { replace: true })
         })
         .catch(function (error) {
           console.log("Ip Error: ", error)
@@ -74,7 +74,7 @@ function App() {
       fetchData()
     }
 
-  }, [ipData, navigate])
+  }, [ipData])
 
   //Current-local Weather
   useEffect(() => {
@@ -102,7 +102,7 @@ function App() {
                 })
                 .then((data) => {
                   setCurrentWeather(data)
-                  navigate("/current", { replace: true })
+                  // navigate("/current", { replace: true })
                 })
             })
           }
@@ -124,7 +124,7 @@ function App() {
       fetchData()
     }
 
-  }, [ipData, navigate])
+  }, [ipData])
 
 
   // Exchange currencies rate
@@ -191,7 +191,7 @@ function App() {
         return axios.get(`${api.baseURL}key=${api.apiKey}&q=${position.coords.latitude},${position.coords.longitude}&lang=ru&days=7&aqi=yes&alerts=no`, { timeout: 1000, })
           .then((data) => {
             setCurrentWeather(data)
-            navigate("/current", { replace: true })
+            // navigate("/current", { replace: true })
           })
       }, error => {
         console.log('Error', error)
@@ -215,7 +215,7 @@ function App() {
       })
         .then(data => {
           setSearchWeatherData(data)
-          navigate(`/search`, { replace: true })
+          // navigate(`/search`, { replace: true })
           setQuery('')
         })
         .catch(error => {
