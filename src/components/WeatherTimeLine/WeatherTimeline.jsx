@@ -47,7 +47,7 @@ function WeatherTimeline(props) {
                       <>
                         <div key={element.time_epoch} className={style.container}>
                           <span className={style.dateTimeLine}>
-                            <img src='/clock.png' alt='clock icon'></img>&nbsp; {element.time.slice(-5)}
+                            <img src='./clock.png' alt='clock icon'></img>&nbsp; {element.time.slice(-5)}
                           </span>
                           <h3 className={tempClassColor(Math.round(element.temp_c))}>
                             {element.temp_c > 0 ? `+ ${Math.round(element.temp_c)}` : Math.round(element.temp_c)}°
@@ -69,7 +69,7 @@ function WeatherTimeline(props) {
                                   key={element.time_epoch}
                                   className={element.time.slice(10, -3).trim() !== "00" ? style.container : style.containerNextDay}>
                                   <span className={element.time.slice(10, -3).trim() !== "00" ? style.dateTimeLine : style.dateTimeLineNextDay}>
-                                    <img src='/clock.png' alt='clock icon'></img>
+                                    <img src='./clock.png' alt='clock icon'></img>
                                     &nbsp;
                                     {element.time.slice(10, -3).trim() !== "00" ? element.time.slice(-5) : daysOfTheWeek([n + 1]) + element.time}
                                   </span>
@@ -100,7 +100,7 @@ function WeatherTimeline(props) {
                   <>
                     <div key={elem.time_epoch} className={style.container}>
                       <span className={style.dateTimeLine}>
-                        <img src='/clock.png' alt='clock icon'></img>
+                        <img src='./clock.png' alt='clock icon'></img>
                         {i === 0 ? " Сейчас" : " " + elem.time.slice(-5) && elem.time.slice(10, -3) !== "00" ? " " + elem.time.slice(-5) : elem.time}
                       </span>
                       <h3 className={tempClassColor(Math.round(elem.temp_c))}>
@@ -122,7 +122,7 @@ function WeatherTimeline(props) {
                               key={element.time_epoch}
                               className={element.time.slice(10, -3).trim() !== "00" ? style.container : style.containerNextDay}>
                               <span className={element.time.slice(10, -3).trim() !== "00" ? style.dateTimeLine : style.dateTimeLineNextDay}>
-                                <img src='/clock.png' alt='clock icon'></img>
+                                <img src='./clock.png' alt='clock icon'></img>
                                 &nbsp;
                                 {element.time.slice(10, -3).trim() !== "00" ? element.time.slice(-5) : daysOfTheWeek([n + 1]) + " " + element.time}
                               </span>
@@ -165,7 +165,7 @@ function WeatherTimeline(props) {
                       <>
                         <div key={element.time_epoch} className={style.container}>
                           <span className={style.dateTimeLine}>
-                            <img src='/clock.png' alt='clock icon'></img> {element.time.slice(-5)}
+                            <img src='./clock.png' alt='clock icon'></img> {element.time.slice(-5)}
                           </span>
                           <h3 className={tempClassColor(Math.round(element.temp_c))}>
                             {element.temp_c > 0 ? "+" + Math.round(element.temp_c) : Math.round(element.temp_c)}°
@@ -186,7 +186,7 @@ function WeatherTimeline(props) {
                                   key={element.time_epoch}
                                   className={element.time.slice(10, -3).trim() !== "00" ? style.container : style.containerNextDay}>
                                   <span className={element.time.slice(10, -3).trim() !== "00" ? style.dateTimeLine : style.dateTimeLineNextDay}>
-                                    <img src='/clock.png' alt='clock icon'></img>
+                                    <img src='./clock.png' alt='clock icon'></img>
                                     &nbsp;
                                     {element.time.slice(10, -3).trim() !== "00" ? element.time.slice(-5) : daysOfTheWeek([n + 1]) + element.time}
                                   </span>
@@ -216,7 +216,7 @@ function WeatherTimeline(props) {
                   <>
                     <div key={elem.time_epoch} className={style.container}>
                       <span className={style.dateTimeLine}>
-                        <img src='/clock.png' alt='clock icon'></img>{" "}
+                        <img src='./clock.png' alt='clock icon'></img>{" "}
                         {i === 0 ? " Сейчас" : elem.time.slice(-5) && elem.time.slice(10, -3) !== "00" ? elem.time.slice(-5) : elem.time}
                       </span>
                       <h3 className={tempClassColor(Math.round(elem.temp_c))}>
@@ -238,7 +238,7 @@ function WeatherTimeline(props) {
                               key={element.time_epoch}
                               className={element.time.slice(10, -3).trim() !== "00" ? style.container : style.containerNextDay}>
                               <span className={element.time.slice(10, -3).trim() !== "00" ? style.dateTimeLine : style.dateTimeLineNextDay}>
-                                <img src='/clock.png' alt='clock icon'></img>
+                                <img src='./clock.png' alt='clock icon'></img>
                                 &nbsp;
                                 {element.time.slice(10, -3).trim() !== "00"
                                   ? element.time.slice(-5)
