@@ -31,9 +31,11 @@ function WeatherTimeline(props) {
     }
   };
 
+  //Search weather
   if (!isEmpty(props.searchForecastHours) && !props.errStatus) {
     return (
       <footer className={style.timelineContainer}>
+        {/*twoDaysWeather mean next days weather  */}
         {props.twoDaysWeather > 0
           ? props.searchForecastHours.data.forecast.forecastday
               .filter((el, i) => i === props.twoDaysWeather)
@@ -59,6 +61,7 @@ function WeatherTimeline(props) {
                             <div className={style.descriptionTimeLine}>{element.condition.text}</div>
                           </div>
                         </div>
+                        {/* */}
                         {index > arr.length - 2
                           ? props.searchForecastHours.data.forecast.forecastday[props.twoDaysWeather].hour.map((element, index) => {
                               return (
@@ -89,7 +92,8 @@ function WeatherTimeline(props) {
                     );
                   });
               })
-          : props.searchForecastHours.data.forecast.forecastday[0].hour
+          : // Today weather hours
+            props.searchForecastHours.data.forecast.forecastday[0].hour
               .filter((el, index) => parseInt(el.time.slice(11, -3)) >= parseInt(props.searchForecastHours.data.current.last_updated.slice(11, -3)))
               .map((elem, i, arr) => {
                 return (
@@ -144,6 +148,7 @@ function WeatherTimeline(props) {
     );
   }
 
+  // Local weather
   if (!isEmpty(props.initialForecastHours) && !props.errStatus) {
     return (
       <footer className={style.timelineContainer}>
