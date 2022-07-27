@@ -3,7 +3,7 @@
   "name": "Прогноз погоды и курс валют",
   "icons": [
     {
-      "src": "cloudy (2).png",
+      "src": "weatherAppNext.png",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
