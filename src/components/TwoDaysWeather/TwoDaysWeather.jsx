@@ -33,8 +33,6 @@ function TwoDaysWeather(props) {
   };
 
   if (!isEmpty(props.searchForecast) && !props.errStatus) {
-    console.log("Search date:", daysOfTheWeek([moment().add(1, "days").days()]));
-    console.log("Search:", props.searchForecast.data.forecast.forecastday);
     return (
       <div className={style.weekData}>
         {props.searchForecast.data.forecast.forecastday

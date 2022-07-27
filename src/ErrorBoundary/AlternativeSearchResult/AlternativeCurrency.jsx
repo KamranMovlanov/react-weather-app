@@ -3,9 +3,7 @@ import style from "./AlternativeSearchResult.module.css";
 import { isEmpty } from "../../components/utilities/utilities";
 import CountryQuery from "country-query";
 
-// TODO: Попробуй искать не по сталице, а по стране
 function AlternativeCurrency(props) {
-  console.log("AlternativeCurrency: ", props.exchangeRate.data);
   return (
     <ul className={style.countryInfo}>
       <h5>Курсы валют за сегодня</h5>

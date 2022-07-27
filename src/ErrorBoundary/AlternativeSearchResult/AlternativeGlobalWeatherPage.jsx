@@ -1,8 +1,7 @@
 import React from "react";
 import moment from "moment";
 import style from "./AlternativeSearchResult.module.css";
-import { daysOfTheWeek, isEmpty } from "../../components/utilities/utilities";
-import CountryQuery from "country-query";
+import { isEmpty } from "../../components/utilities/utilities";
 
 //Pages
 import AlternativeSearchResult from "./AlternativeSearchResult";
@@ -10,7 +9,6 @@ import AlternativeSearchNextDays from "./AlternativeSearchNextDays";
 
 function AlternativeGlobalWeatherPage(props) {
   moment.locale("ru");
-  const d = new Date();
 
   if (isEmpty(props.searchResult.data)) {
     return <div className={style.loader}></div>;

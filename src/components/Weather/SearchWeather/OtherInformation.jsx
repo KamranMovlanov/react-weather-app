@@ -4,6 +4,7 @@ import { isEmpty } from "../../utilities/utilities";
 import moment from "moment";
 
 function OtherInformation(props) {
+  // Local weather
   if (!isEmpty(props.elem)) {
     return (
       <ul className={style.OtherInformationForecast}>
@@ -60,6 +61,7 @@ function OtherInformation(props) {
     );
   }
 
+  //Search weather
   if (!isEmpty(props.searchResult)) {
     return (
       <ul className={style.OtherInformation}>

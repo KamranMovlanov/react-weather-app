@@ -4,7 +4,7 @@ import AlternativeCurrency from "../AlternativeSearchResult/AlternativeCurrency"
 import AlternativeOtherInformation from "./AlternativeOtherInformation";
 import { daysOfTheWeek } from "../../components/utilities/utilities";
 import moment from "moment";
-const CountryQuery = require("country-query");
+import CountryQuery from "country-query";
 
 function AlternativeSearchResult(props) {
   moment.locale("ru");
@@ -43,7 +43,6 @@ function AlternativeSearchResult(props) {
           ? ` ${CountryQuery.findByNameCommon(props.searchResult.data.location.country).flag}`
           : ""}
       </h2>
-
       <p className={style.city}>{props.searchResult.data.location.tz_id}</p>
       <h4 className={style.date}>
         {props.searchResult.data.location.localtime}, {daysOfTheWeek([n])}

@@ -19,15 +19,15 @@ class ErrorBoundaryNotFound extends Component {
 
   render() {
     if (this.state.hasError) {
-      // console.log("Not found: ", this.props.children[1].props.setErrStatus(true));
       this.props.children[1].props.setErrStatus(true);
       return (
         <div className={style.AlternativeSearchResult}>
           <Link className={style.currentWeatherBtn} reloadDocument to={"/current"}>
             Назад
           </Link>
-
-          <h1>Не удалось найти</h1>
+          <div className='backgroundWrapper'>
+            <img className={style.background} src='/Laptop2.svg' alt='Not found'></img>
+          </div>
         </div>
       );
     }

@@ -89,12 +89,3 @@ export const uvQualityDetector = (param) => {
     return param + ", Экстремально высокий";
   }
 };
-
-
-
-
-
-const d = new Date()
-const n = d.getDay()
-
-

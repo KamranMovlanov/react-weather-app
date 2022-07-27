@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import style from "./AlternativeSearchResult/AlternativeSearchResult.module.css";
+
+//Pages
 import AlternativeGlobalWeatherPage from "./AlternativeSearchResult/AlternativeGlobalWeatherPage";
 import ErrorBoundaryNotFound from "./ErrorBoundaryNotFound/ErrorBoundaryNotFound";
 
@@ -20,7 +22,6 @@ class ErrorBoundary extends Component {
 
   render() {
     if (this.state.hasError) {
-      console.log("state: ", this.state, this.props.children.props);
       const errСancellation = () => {
         return this.setState({ hasError: false });
       };
@@ -29,7 +30,7 @@ class ErrorBoundary extends Component {
         <div className={style.AlternativeSearchResult}>
           <ErrorBoundaryNotFound>
             <button
-              className={style.currentWeatherBtn}
+              className={style.backWeatherBtn}
               onClick={() => {
                 this.props.children.props.setSearchWeatherData({});
                 errСancellation();

@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: .5rem;
 }
 
 .card {
@@ -10,29 +11,14 @@
   position: relative;
   overflow-y: scroll;
   width: 100%;
-  padding: .5rem 1rem;
-  margin: .4rem;
-  background-color: rgba(0, 0, 0, 0.7);
-  /* background: url("./../public/federico-bottos-obQacWYxB1I-unsplash.jpg"); */
+  padding: .1rem 1.6rem;
+  background-color: rgb(29, 29, 29, .96);
   color: rgb(201, 201, 201);
-  border-radius: 10px;
+  border-radius: 30px;
   font-weight: 500;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 10px 20px, rgba(0, 0, 0, .4) 0px 6px 10px;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 10px 20px, rgba(0, 0, 0, .6) 0px 6px 20px;
 }
 
-
-/* .timelineItem {
-  display: flex;
-  font-size: 18px;
-  font-weight: 600;
-  padding: 10px;
-}
-
-.timeLineClockIcon {
-  max-width: 30px;
-  padding-left: 5px;
-  align-items: center;
-} */
 
 @media(max-width: 1300px){ 
 	.card{
@@ -40,23 +26,25 @@
 	}
 }
 
-@media(max-width: 992px){ 
+/* @media(max-width: 992px){ 
 	.card{
     min-width: 100vw;
     min-height: 100vh;
 	}
-} 
+}  */
 
 @media(max-width: 767px){ 
 .App{
   margin: -10px;
+  padding: 0;
 }
 
 	.card{
 		min-width: 100vw;
     min-height: 100vh;
-    background-color: rgba(22, 22, 22, 0.946);
-    background: linear-gradient(to top, #131313, #161616, #1f1f1f);
+    background-color: rgba(0, 0, 0, 0.8);
     margin: 0;
+    border-radius: 0;
+    box-shadow:none;
 	}
 }

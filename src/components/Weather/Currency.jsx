@@ -116,10 +116,7 @@ function Currency(props) {
     return (
       <>
         <ul className={style.countryInfo}>
-          <h5>
-            Курсы валют за сегодня
-            {/* {" "} {!isEmpty(props.exchangeRate) ? props.exchangeRate[3].data.date : ""} */}
-          </h5>
+          <h5>Курсы валют за сегодня</h5>
           <div className={style.curencyVallue}>
             <li className={style.countryInfoItems}>
               <img src='./icons/currencyIcons/sack.png' className={style.OtherInformationIcon} alt='icon'></img>
@@ -239,112 +236,6 @@ function Currency(props) {
                   )}`
                 : ` ${props.ipData.data.currency.currency_name}`}
             </li>
-            {/*======= курс криптовалют =============*/}
-            {/* <li className={style.countryInfoItems}>
-              <img
-                src="./icons/currencyIcons/BTC.png"
-                className={style.OtherInformationIcon}
-                alt="icon"
-              ></img>
-              BTC:{" "}
-              {!isEmpty(props.exchangeRate)
-                ? props.exchangeRate[0].data.result.toFixed(3)
-                : "Нет данных"}
-              {CountryQuery.findByNameCommon(
-                props.currentWeatherGeneral.data.location.country
-              )
-                ? ` ${props.dynamicallyObjkeyDetect(
-                    CountryQuery.findByNameCommon(
-                      props.currentWeatherGeneral.data.location.country
-                    ).currencies,
-                    "symbol"
-                  )}`
-                : ` ${props.ipData.data.currency.currency_name}`}
-            </li>
-            <li className={style.countryInfoItems}>
-              <img
-                src="./icons/currencyIcons/ETH.png"
-                className={style.OtherInformationIcon}
-                alt="icon"
-              ></img>
-              ETH:{" "}
-              {!isEmpty(props.exchangeRate)
-                ? props.exchangeRate[1].data.result.toFixed(3)
-                : "Нет данных"}
-              {CountryQuery.findByNameCommon(
-                props.currentWeatherGeneral.data.location.country
-              )
-                ? ` ${props.dynamicallyObjkeyDetect(
-                    CountryQuery.findByNameCommon(
-                      props.currentWeatherGeneral.data.location.country
-                    ).currencies,
-                    "symbol"
-                  )}`
-                : ` ${props.ipData.data.currency.currency_name}`}
-            </li>
-            <li className={style.countryInfoItems}>
-              <img
-                src="./icons/currencyIcons/doge.png"
-                className={style.OtherInformationIcon}
-                alt="icon"
-              ></img>
-              DOGE:{" "}
-              {!isEmpty(props.exchangeRate)
-                ? props.exchangeRate[2].data.result.toFixed(3)
-                : "Нет данных"}
-              {CountryQuery.findByNameCommon(
-                props.currentWeatherGeneral.data.location.country
-              )
-                ? ` ${props.dynamicallyObjkeyDetect(
-                    CountryQuery.findByNameCommon(
-                      props.currentWeatherGeneral.data.location.country
-                    ).currencies,
-                    "symbol"
-                  )}`
-                : ` ${props.ipData.data.currency.currency_name}`}
-            </li>
-            <li className={style.countryInfoItems}>
-              <img
-                src="./icons/currencyIcons/USDT.svg"
-                className={style.OtherInformationIcon}
-                alt="icon"
-              ></img>
-              USDT:{" "}
-              {!isEmpty(props.exchangeRate)
-                ? props.exchangeRate[3].data.result.toFixed(3)
-                : "Нет данных"}
-              {CountryQuery.findByNameCommon(
-                props.currentWeatherGeneral.data.location.country
-              )
-                ? ` ${props.dynamicallyObjkeyDetect(
-                    CountryQuery.findByNameCommon(
-                      props.currentWeatherGeneral.data.location.country
-                    ).currencies,
-                    "symbol"
-                  )}`
-                : ` ${props.ipData.data.currency.currency_name}`}
-            </li>
-            <li className={style.countryInfoItems}>
-              <img
-                src="./icons/currencyIcons/usdc.svg"
-                className={style.OtherInformationIcon}
-                alt="icon"
-              ></img>
-              USDC:{" "}
-              {!isEmpty(props.exchangeRate)
-                ? props.exchangeRate[4].data.result.toFixed(3)
-                : "Нет данных"}
-              {CountryQuery.findByNameCommon(
-                props.currentWeatherGeneral.data.location.country
-              )
-                ? ` ${props.dynamicallyObjkeyDetect(
-                    CountryQuery.findByNameCommon(
-                      props.currentWeatherGeneral.data.location.country
-                    ).currencies,
-                    "symbol"
-                  )}`
-                : ` ${props.ipData.data.currency.currency_name}`}
-            </li> */}
           </div>
         </ul>
       </>

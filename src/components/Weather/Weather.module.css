@@ -2,14 +2,15 @@
     position: relative;
     display: inline-flex;
     flex-direction: column;
-    max-width: 80%;
+    order:  0;
+    max-width: 100%;
     margin-bottom: 80px;
     padding: 10px;
-    /* FIXME: подумай над высотой */
-    max-height: 21rem;
+    max-height: 23rem;
     line-height: 1.4;
     font-size: 18px;
 }
+
 
 /*============== TEMP ===================*/
 .tempCold {
@@ -17,7 +18,7 @@
     position: relative;
     top: -10px;
     margin: 15px;
-    font-size: 50px;
+    font-size: 45px;
     font-weight: 500;
 }
 
@@ -26,7 +27,7 @@
     position: relative;
     top: -10px;
     margin: 15px;
-    font-size: 50px;
+    font-size: 45px;
     font-weight: 500;
 }
 
@@ -35,7 +36,7 @@
     position: relative;
     top: -10px;
     margin: 15px;
-    font-size: 50px;
+    font-size: 45px;
     font-weight: 500;
 }
 
@@ -44,7 +45,7 @@
     position: relative;
     top: -10px;
     margin: 15px;
-    font-size: 50px;
+    font-size: 45px;
     font-weight: 500;
 }
 
@@ -53,7 +54,7 @@
     position: relative;
     top: -10px;
     margin: 15px;
-    font-size: 50px;
+    font-size: 45px;
     font-weight: 500;
 }
 
@@ -62,7 +63,7 @@
     position: relative;
     top: -10px;
     margin: 15px;
-    font-size: 50px;
+    font-size: 45px;
     font-weight: 500;
 }
 
@@ -75,8 +76,8 @@
 .OtherInformation {
     position: relative;
     padding: 10px;
-    bottom: 320px;
-    left: 250px;
+    bottom: 18rem;
+    left: 18rem;
     list-style: none;
     line-height: 2;
     font-weight: 600;
@@ -103,10 +104,10 @@
 
 /*=========== Currency ==============*/
 .countryInfo{
-    position: relative;
+    position: absolute;
     color: rgba(254, 254, 254, 0.6);
-    top: -38rem;
-    right: -47rem;
+    bottom: 12rem;
+    right: 17rem;
     height: 50px;
     max-width: 27rem;
     list-style-type: none;
@@ -117,11 +118,11 @@
     font-size: 14px;
     margin-bottom: 20px;
     text-align: center;
-    width: 70%;
+    width: 100%;
     color: rgba(254, 254, 254, 0.7);
 }
 .countryInfo span{
-    margin-bottom: 20px;
+    margin-bottom: 0px;
     text-align: left;
     color: rgba(254, 254, 254, 0.7);
 }
@@ -129,7 +130,7 @@
 .curencyVallue{
     display: flex;
     justify-content: center;
-    width: 70%;
+    width: 100%;
     margin-bottom: 10px;
 }
 
@@ -151,7 +152,7 @@
 }
 
 .cryptoWrapper li{
-    width: 300px;
+    width: 10rem;
 }
 
 
@@ -189,12 +190,10 @@
     transform: rotate(360deg);
 }
 
-.airQualityPopup{
+/* .airQualityPopup{
     background-color: #272727;
     margin-left: auto;
     margin-right: auto;
-    /* margin-left: 15%;
-    margin-bottom: 50%; */
     color: rgba(226, 226, 226, 0.931);
     margin: 30px;
     padding: 30px;
@@ -219,7 +218,7 @@
 
 .airQualityPopup>p{
     font-size: 20px;
-}
+} */
 
 /*Air quality colors*/
 .airMin {
@@ -276,21 +275,21 @@
     bottom: 3px;
     overflow: hidden;
     border-radius: 2px;
-    background-color: #c2c2c2bf;
+    background-color: #4d4d4d5e;
     appearance: none;
     box-shadow: 0 2px 2px rgba(0, 0, 0, .8) inset;
-    opacity: .6;
+    opacity: .7;
 }
 
 
 .uvProgressBar[value]::-moz-progress-bar {
-      background-color: #292929ac;
+      background-color: #3d2fdeac;
       border-radius: 2px;
       border: 0;
       appearance: none;
   }
 .uvProgressBar[value]::-webkit-progress-bar {
-      background-color: #3c3c3c85;
+      background-color: #4d4d4d5e;
       border-radius: 2px;
       border: 0;
       appearance: none;
@@ -302,7 +301,7 @@
     border: 0;
     overflow: hidden;
     border-radius: 2px;
-    /* background-color: #eeeded; */
+    background-color: #3d2fdeac;
     appearance: none;
     text-align: center;
 }
@@ -311,7 +310,7 @@
     position: relative;
     padding: 10px;
     bottom: 220px;
-    left: 350px;
+    left: 18rem;;
     display: inline-flex;
     flex-direction: column;
     list-style: none;
@@ -324,21 +323,27 @@
 
 .city {
     margin: 0;
-    line-height: 1.4;
+    line-height: .5;
+    max-width: 30%;
     font-size: 20px;
     font-weight: 400;
 }
 
+.cityNative{
+    max-width: 30%;
+}
+
 .ipAddr{
-    font-size: 14px;
+    font-size: 15px;
     line-height: .3;
 }
 
 .date {
     margin: 0;
     padding-top: 10px;
-    padding-bottom: 40px;
-    font-size: 16px;
+    line-height: .5;
+    padding-bottom: 50px;
+    font-size: 15px;
     font-weight: 500;
 }
 
@@ -474,112 +479,234 @@
 
 
 /*==================== Mobile =================== */
-
-@media(max-width: 1300px){ 
-    .weatherContainer{
-        max-width: 100%;
-        margin-bottom: 2rem;
-        padding: 20px;
-        /* FIXME: подумай над высотой */
-        line-height: 1.2;
-        font-size: 14px;
-    }
-    .OtherInformation {
+@media(max-width: 1320px) {
+    .weatherContainer {
         position: relative;
-        padding: 0px;
-        bottom: 220px;
-        left: 260px;
         display: inline-flex;
         flex-direction: column;
-        line-height: 2;
-        font-weight: 500;
-        font-size: 14px;
-        color: rgba(254, 254, 254, 0.6);
-        word-wrap: break-word;
+        order: 0;
+        max-width: 100%;
+        margin-bottom: 80px;
+        padding: 30px;
+        max-height: 55rem;
+        line-height: 1.5;
+        font-size: 18px;
     }
-    .OtherInformationIcon {
-        max-width: 22px;
-        margin-right: 10px;
-    }
-    /*=========== Right side info-block ==============*/
-    .countryInfo{
-        position: absolute;
-        width: 100%;
-        color: rgba(254, 254, 254, 0.6);
-        top: 110px;
-        right: -680px;
-        list-style-type: none;
-        font-weight: 400;
-        font-size: 15px;
-    }
-    .countryInfo>h4{
-        margin-bottom: 12px;
-    }
-    .tempCold {
-        color: rgb(207, 228, 234);
-        padding: 8px;
-        font-size: 50px;
-        font-weight: 400;
-    }
-    
-    .tempVeryCold {
-        color: rgb(82, 154, 221);
-        padding: 8px;
-        font-size: 50px;
-        font-weight: 400;
-    }
-    
-    .temp {
-        color: rgb(234, 234, 207);
-        padding: 8px;
-        font-size: 50px;
-        font-weight: 400;
-    }
-    
-    .tempAverageDegrees {
-        color: rgb(229, 206, 153);
-        padding: 8px;
-        font-size: 50px;
-        font-weight: 400;
-    }
-    
-    .tempHighDegrees {
-        color: rgb(234, 172, 90);
-        padding: 8px;
-        font-size: 50px;
-        font-weight: 400;
-    }
-    
-    .tempExtremeDegrees {
-        color: rgb(255, 117, 42);
-        padding: 8px;
-        font-size: 50px;
-        font-weight: 400;
-    }
+
+        .OtherInformation {
+            position: relative;
+            padding: 10px;
+            bottom: 18rem;
+            left: 20rem;
+            list-style: none;
+            line-height: 2;
+            font-weight: 600;
+            font-size: 16px;
+            color: rgba(254, 254, 254, 0.6);
+            word-wrap: break-word;
+        }
+                                                .OtherInformationForecast {
+                                                    position: relative;
+                                                    padding: 10px;
+                                                    bottom: 16rem;
+                                                    left: 4rem;
+                                                    margin: 0 auto;
+                                                    display: inline-flex;
+                                                    flex-direction: column;
+                                                    list-style: none;
+                                                    line-height: 2;
+                                                    font-weight: 600;
+                                                    font-size: 18px;
+                                                    color: rgba(254, 254, 254, 0.6);
+                                                    word-wrap: break-word;
+                                                }
+                /*=========== Currency ==============*/
+                .countryInfo {
+                    position: relative;
+                    color: rgba(254, 254, 254, 0.6);
+                    bottom: 12rem;
+                    left: 0;
+                    height: 50px;
+                    margin: 0 auto;
+                    max-width: 100%;
+                    font-size: 16px;
+                }
+                                                           /* Second column */
+                                                           .cryptoWrapper {
+                                                               position: absolute;
+                                                               left: 200px;
+                                                               top: 6.2rem;
+                                                               display: inline-flex;
+                                                               flex-direction: column;
+                                                               justify-content: center;
+                                                               align-items: flex-start;
+                                                               padding: 5px;
+                                                           }
 }
 
-/* @media(max-width: 992px){ 
 
-}  */
+@media(max-width: 950px){ 
+    .weatherContainer {
+            position: relative;
+            display: inline-flex;
+            flex-direction: column;
+            order: 0;
+            width: 100%;
+            margin-top: 40px;
+            margin-bottom: 280px;
+            padding: 30px;
+            max-height: 75rem;
+            line-height: 1.6;
+            font-size: 25px;
+        }
+
+                /*============== TEMP ===================*/
+                .tempCold {
+                    color: rgb(207, 228, 234);
+                    position: relative;
+                    top: -10px;
+                    margin: 15px;
+                font-size: 70px;
+                }
+        
+                .tempVeryCold {
+                    color: rgb(82, 154, 221);
+                    position: relative;
+                    top: -10px;
+                    margin: 15px;
+                    font-size: 70px;
+                }
+        
+                .temp {
+                    color: rgb(234, 234, 207);
+                    position: relative;
+                    top: -10px;
+                    margin: 15px;
+        font-size: 70px;
+                }
+        
+                .tempAverageDegrees {
+                    color: rgb(229, 206, 153);
+                    position: relative;
+                    top: -10px;
+                    margin: 15px;
+    font-size: 70px;
+                }
+        
+                .tempHighDegrees {
+                    color: rgb(234, 172, 90);
+                    position: relative;
+                    top: -10px;
+                    margin: 15px;
+            font-size: 70px;
+                }
+        
+                .tempExtremeDegrees {
+                    color: rgb(255, 117, 42);
+                    position: relative;
+                    top: -10px;
+                    margin: 15px;
+                font-size: 70px;
+                }
+        
+                .feelsLike {
+                    position: relative;
+                    top: -16px;
+                    font-size: 20px;
+                    font-weight: 600;
+                }
+    
+        .OtherInformation {
+            position: relative;
+            padding: 10px;
+            bottom: 0;
+            left: 0;
+            margin: 0 auto;
+            list-style: none;
+            line-height: 2;
+            font-weight: 600;
+            font-size: 20px;
+            color: rgba(254, 254, 254, 0.6);
+            word-wrap: break-word;
+        }
+
+                .OtherInformationForecast {
+                    position: relative;
+                    padding: 10px;
+                    bottom: 0;
+                    left: 0;
+                    margin: 0 auto;
+                    display: inline-flex;
+                    flex-direction: column;
+                    list-style: none;
+                    line-height: 2;
+                    font-weight: 600;
+                    font-size: 20px;
+                    color: rgba(254, 254, 254, 0.6);
+                    word-wrap: break-word;
+                }
+    
+        /*=========== Currency ==============*/
+        .countryInfo {
+            position: relative;
+            color: rgba(254, 254, 254, 0.6);
+            bottom: -2rem;
+            left: -5rem;
+            height: 70px;
+            margin: 0 auto;
+            max-width: 100%;
+            list-style-type: none;
+            font-weight: 600;
+            font-size: 16px;
+        }
+} 
 
 @media(max-width: 767px){ 
     .weatherContainer{
         position: relative;
         display: inline-flex;
         flex-direction: column;
-        max-width: 100%;
-        margin-bottom: 55rem;
+        width: 100%;
+        margin-bottom: 33rem;
         margin-top: 50px;
         padding-left: 15px;
-        line-height: 1;
-        font-size: 17px;
+        line-height: 1.6;
+        font-size: 1.2em;
+        padding-left: 15px;
     }
+
+        .city {
+            margin: 0;
+            line-height: .5;
+            max-width: 100%;
+            font-size: 25px;
+            font-weight: 600;
+        }
+        .cityNative {
+            max-width: 100%;
+        }
+
+                .ipAddr {
+                    font-size: 15px;
+                    line-height: 1.3;
+                }
+        .flex {
+            display: inline-flex;
+            align-items: center;
+            width: 80%;
+            position: relative;
+            left: 0;
+            top: 0;
+
+        }
+
 
     .OtherInformation {
         position: relative;
         padding: 0;
-        bottom: 0;
-        left: 0;
+        margin: 10px;
+        bottom: -2rem;
+        left: -.3rem;
         display: inline-flex;
         flex-direction: column;
         line-height: 2.2;
@@ -597,26 +724,26 @@
         .OtherInformationForecast {
             position: relative;
             padding: 0;
-            bottom: 25px;
+            bottom: -4rem;
             left: 0;
             display: inline-flex;
             flex-direction: column;
             list-style: none;
             line-height: 2.2;
             font-weight: 600;
-            font-size: 15px;
+            font-size: 16px;
             color: rgba(254, 254, 254, 0.6);
             word-wrap: break-word;
         }
     
-
     /*=========== currency ==============*/
     .countryInfo{
         position: absolute;
-        max-width: 95%;
+        width: 100%;
+        margin: 0 auto;
         color: rgba(254, 254, 254, 0.6);
-        top: 700px;
-        right: -2rem;
+        bottom: -8rem;
+        left: 0;
         list-style-type: none;
         font-weight: 600;
         font-size: 15px;
@@ -624,11 +751,10 @@
     }
     .countryInfo>h5{
         position: relative;
-        max-width: 80%;
+        max-width: 70%;
         margin-bottom: 30px;
         text-align: center;
-        left: 5px;
-        font-size: 16px;
+        font-size: 18px;
     }
     
     .countryInfoItems{
@@ -639,14 +765,14 @@
             display: flex;
             justify-content: flex-start;
             width: 100%;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
-
+        
                 /* Second column */
                 .cryptoWrapper {
                     position: absolute;
                     left: 200px;
-                    top: 115px;
+                    top: 8rem;
                     display: inline-flex;
                     flex-direction: column;
                     justify-content: center;
@@ -655,56 +781,57 @@
                 }
         
                 .cryptoWrapper li {
-                    width: 300px;
+                    width: 100%;
                 }
 
     .tempCold {
         color: rgb(207, 228, 234);
         padding: 22px;
-        font-size: 70px;
+        font-size: 60px;
         font-weight: 300;
     }
     
     .tempVeryCold {
         color: rgb(82, 154, 221);
         padding: 22px;
-        font-size: 70px;
+        font-size: 60px;
         font-weight: 300;
     }
     
     .temp {
         color: rgb(234, 234, 207);
         padding: 22px;
-        font-size: 70px;
+        font-size: 60px;
         font-weight: 300;
     }
     
     .tempAverageDegrees {
         color: rgb(229, 206, 153);
         padding: 22px;
-        font-size: 70px;
+        font-size: 60px;
         font-weight: 300;
     }
     
     .tempHighDegrees {
         color: rgb(234, 172, 90);
         padding: 22px;
-        font-size: 70px;
+        font-size: 60px;
         font-weight: 300;
     }
     
     .tempExtremeDegrees {
         color: rgb(255, 117, 42);
         padding: 22px;
-        font-size: 70px;
+        font-size: 60px;
         font-weight: 300;
     }
     
     .feelsLike {
         position: relative;
         top: -16px;
-        font-size: 16px;
+        font-size: 18px;
         font-weight: 400;
     }
+        
 
     }

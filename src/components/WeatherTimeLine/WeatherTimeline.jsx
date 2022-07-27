@@ -3,7 +3,6 @@ import style from "./WeatherTimeLine.module.css";
 import { isEmpty, daysOfTheWeek } from "../utilities/utilities";
 
 function WeatherTimeline(props) {
-  // console.log("ID: ", id)
   const d = new Date();
   const n = d.getDay();
 
@@ -208,8 +207,6 @@ function WeatherTimeline(props) {
           : props.initialForecastHours.data.forecast.forecastday[0].hour
               .filter((el, index) => parseInt(el.time.slice(11, -3)) >= parseInt(props.initialForecastHours.data.current.last_updated.slice(11, -3)))
               .map((elem, i, arr) => {
-                // console.log("elem.time_epoch : ", elem.time_epoch)
-                // console.log("Date Now: ", Date.now())
                 return (
                   <>
                     <div key={elem.time_epoch} className={style.container}>
@@ -240,8 +237,7 @@ function WeatherTimeline(props) {
                                 &nbsp;
                                 {element.time.slice(10, -3).trim() !== "00"
                                   ? element.time.slice(-5)
-                                  : // FIXME: без n + 1 с понедельника показывает не правильный день недели...
-                                    daysOfTheWeek([n + 1]) + " " + element.time.slice(-5)}
+                                  : daysOfTheWeek([n + 1]) + " " + element.time.slice(-5)}
                                 {/* {element.time.slice(10, -3).trim() !== "00" ? element.time.slice(-5) : daysOfTheWeek([n + 1]) + " " + element.time}  Это как было*/}
                               </span>
                               <h3 className={tempClassColor(Math.round(element.temp_c))}>

@@ -3,7 +3,7 @@
     display: flex;
     padding: 10px 0px;
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
     overflow-x: scroll;
     /* box-shadow: rgba(0, 0, 0, .32) inset 0px 0px 12px; */
     /* box-shadow: rgb(29, 29, 29, 0.9) 0px 0px 15px 0px inset; */
@@ -31,6 +31,8 @@
     background-color: rgba(0, 0, 0, 0.4);
     box-shadow: rgba(3, 102, 214, 0.2) 0px 0px 0px 2px;
 }
+
+
 
 
 .containerNextDay {
@@ -64,7 +66,7 @@
 }
 
 
-.loader {
+/* .loader {
     animation: spinningColor 1.5s ease-in-out infinite;
     border: 5px double #a896fd;
     border-radius: 50%;
@@ -99,7 +101,7 @@
         border-top: 5px dashed #f56682;
         border-bottom: 5px dashed #387eff;
     }
-}
+} */
 
 .flexTimeLine {
     display: flex;
@@ -183,16 +185,15 @@
     width: 20px;
 }
 
-/*Mobile*/
 
 @media(max-width: 767px){ 
     /*================ Timeline started ============== */
 .timelineContainer {
     width: 97%;
-    margin: 0 auto;
+
     margin-bottom: 20px;
-    box-shadow: rgba(0, 0, 0, .3) inset 0px 0px 15px;
-    border-radius: 25px;
+    margin-left: 5px;
+    box-shadow: rgba(214, 76, 12, 0.6) 0px 0px 0px 2px;
 }
 
 .container {

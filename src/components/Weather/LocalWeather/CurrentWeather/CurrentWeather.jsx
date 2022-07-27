@@ -13,7 +13,8 @@ function CurrentWeather(props) {
         <h3 className={style.city}>
           {props.initialWeather.data.location.country} {props.initialWeather.data.location.name} {props.flag}
         </h3>
-        <p>
+        <p className={style.cityNative}>
+          {/* Native language city name */}
           {Object.entries(CountryQuery.find("capital", props.initialWeather.data.location.tz_id.split("/")[1]).currencies)[0][0]
             ? Object.keys(CountryQuery.find("capital", props.initialWeather.data.location.tz_id.split("/")[1])["name"]["native"]).length > 1
               ? Object.values(CountryQuery.find("capital", props.initialWeather.data.location.tz_id.split("/")[1])["name"]["native"])[0]["official"]
@@ -60,13 +61,6 @@ function CurrentWeather(props) {
         airQualityDetector={props.airQualityDetector}
         calcOfDaylightHours={props.calcOfDaylightHours}
       />
-
-      {/* <Currency 
-    exchangeRate={props.exchangeRate}
-    currentWeatherGeneral={props.currentWeatherGeneral}
-    dynamicallyObjkeyDetect={props.dynamicallyObjkeyDetect}
-    ipData={props.ipData}
-    /> */}
     </>
   );
 }

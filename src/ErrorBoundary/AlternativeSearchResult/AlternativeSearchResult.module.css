@@ -1,6 +1,14 @@
 .AlternativeSearchResult{
-    padding: 1rem;
-    min-height: 23rem;
+    position: relative;
+        display: inline-flex;
+        flex-direction: column;
+        order: 0;
+        max-width: 100%;
+        margin-bottom: 80px;
+        padding: 10px;
+        max-height: 23rem;
+        line-height: 1.4;
+        font-size: 18px;
 }
 
 /*============== TEMP ===================*/
@@ -66,17 +74,16 @@
 
 .OtherInformation {
     position: relative;
-    padding: 10px;
-    bottom: 220px;
-    left: 50px;
-    display: inline-flex;
-    flex-direction: column;
-    list-style: none;
-    line-height: 2;
-    font-weight: 600;
-    font-size: 14px;
-    color: rgba(254, 254, 254, 0.6);
-    word-wrap: break-word;
+        padding: 10px;
+        bottom: 18rem;
+        left: 20rem;
+        max-width: 60%;
+        list-style: none;
+        line-height: 2;
+        font-weight: 600;
+        font-size: 14px;
+        color: rgba(254, 254, 254, 0.6);
+        word-wrap: break-word;
 }
 
 .OtherInformationIcon {
@@ -92,25 +99,27 @@
 
 /*=========== Currency ==============*/
 .countryInfo{
-    position: relative;
-    color: rgba(254, 254, 254, 0.6);
-    top: -32rem;
-    right: -47rem;
-    list-style-type: none;
-    font-weight: 600;
-    font-size: 14px;
+    position: absolute;
+        color: rgba(254, 254, 254, 0.6);
+        bottom: 15rem;
+        right: 17rem;
+        height: 50px;
+        max-width: 27rem;
+        list-style-type: none;
+        font-weight: 600;
+        font-size: 14px;
 }
 .countryInfo>h5{
     font-size: 14px;
-        margin-bottom: 20px;
-        text-align: left;
-        width: 70%;
+    margin-bottom: 20px;
+    text-align: center;
+    width: 100%;
     color: rgba(254, 254, 254, 0.7);
 }
 
 .curencyVallue {
     display: flex;
-    justify-content: left;
+    justify-content: flex-start;
     margin-bottom: 10px;
 }
 
@@ -122,7 +131,7 @@
 .countryInfoItemsSecondColon {
     position: absolute;
     left: 200px;
-    top: 72px;
+    top: 95px;
     display: inline-flex;
     flex-direction: column;
     justify-content: center;
@@ -168,37 +177,6 @@
     transform: rotate(360deg);
 }
 
-.airQualityPopup{
-    background-color: #272727;
-    margin-left: auto;
-    margin-right: auto;
-    /* margin-left: 15%;
-    margin-bottom: 50%; */
-    color: rgba(226, 226, 226, 0.931);
-    margin: 30px;
-    padding: 30px;
-    border-radius: 15px;
-}
-
-.popupBtn{ 
-    cursor: pointer;  
-    position: relative;  
-    display: block;  
-    padding: 2px 5px;  
-    line-height: 20px;  
-    right: -60px;  
-    top: -40px;  
-    font-size: 18px;  
-    background: #888888e7;  
-    border-radius: 4px;  
-    border: none;
-    outline: none;
-}
-
-
-.airQualityPopup>p{
-    font-size: 20px;
-}
 
 /*Air quality colors*/
 .airMin {
@@ -351,13 +329,13 @@
 .currentWeatherBtn {
     width: 100px;
     position: absolute;
-    top: -40px;
+    top: -72px;
     padding: 0.6em 2em;
     border: none;
     outline: none;
     color: rgba(255, 255, 255, .72);
     font-weight: 600;
-    background: rgb(24, 24, 24, 0.8);
+    background: rgb(24, 24, 24, 1);
     cursor: pointer;
     position: relative;
     z-index: 0;
@@ -422,4 +400,447 @@
     left: 0;
     top: 0;
     border-radius: 10px;
+}
+
+/* Home Btm */
+.backWeatherBtn {
+    width: 100px;
+    position: absolute;
+    top: -25px;
+    padding: 0.6em 2em;
+    border: none;
+    outline: none;
+    color: rgba(255, 255, 255, .72);
+    font-weight: 600;
+    background: rgb(24, 24, 24, 0.8);
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 8px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    -webkit-transition: 0.25s;
+    -o-transition: 0.25s;
+    transition: 0.25s;
+}
+
+.backWeatherBtn:hover {
+    color: rgb(179, 179, 179);
+    box-shadow: rgba(201, 201, 201, 0.1) 0px 2px 15px, rgba(62, 62, 62, 0.2) 0px 4px 15px;
+}
+
+.backWeatherBtn:before {
+    content: "";
+    background: linear-gradient(45deg,
+            #5f5f5f94,
+            #b2b2b29b,
+            #4848488f,
+            #3636367d,
+            #2a4e67);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing-currentWeatherBtn 15s linear infinite;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 10px;
+    opacity: .4;
+}
+
+@keyframes glowing-backWeatherBtn {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+.backWeatherBtn:after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgb(28, 28, 28, .1);
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+/*==================== Mobile =================== */
+@media(max-width: 1320px) {
+    .AlternativeSearchResult {
+        position: relative;
+        display: inline-flex;
+        flex-direction: column;
+        order: 0;
+        max-width: 100%;
+        margin-bottom: 80px;
+        padding: 30px;
+        max-height: 45rem;
+        line-height: 1.5;
+        font-size: 18px;
+    }
+
+    .OtherInformation {
+        position: relative;
+        padding: 10px;
+        bottom: 18rem;
+        left: 20rem;
+        list-style: none;
+        line-height: 2;
+        font-weight: 600;
+        font-size: 14px;
+        color: rgba(254, 254, 254, 0.6);
+        word-wrap: break-word;
+    }
+
+    /*=========== Currency ==============*/
+    .countryInfo {
+        position: relative;
+        color: rgba(254, 254, 254, 0.6);
+        bottom: 12rem;
+        left: 0rem;
+        height: 50px;
+        margin: 0 auto;
+        max-width: 27rem;
+        list-style-type: none;
+        font-weight: 600;
+        font-size: 14px;
+    }
+                /* Second column */
+                .countryInfoItemsSecondColon {
+                    position: absolute;
+                    left: 200px;
+                    top:  75px;
+                    display: inline-flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: flex-start;
+                    padding: 5px;
+                }
+        
+                .countryInfoItemsSecondColon li {
+                    width: 100%;
+                }
+}
+
+
+@media(max-width: 950px) {
+    .AlternativeSearchResult {
+        position: relative;
+        display: inline-flex;
+        flex-direction: column;
+        order: 0;
+        width: 100%;
+        margin-top: 40px;
+        margin-bottom: 280px;
+        padding: 30px;
+        max-height: 65rem;
+        line-height: 1.6;
+        font-size: 25px;
+    }
+
+    /*============== TEMP ===================*/
+    .tempCold {
+        color: rgb(207, 228, 234);
+        position: relative;
+        top: -10px;
+        margin: 15px;
+        font-size: 70px;
+    }
+
+    .tempVeryCold {
+        color: rgb(82, 154, 221);
+        position: relative;
+        top: -10px;
+        margin: 15px;
+        font-size: 70px;
+    }
+
+    .temp {
+        color: rgb(234, 234, 207);
+        position: relative;
+        top: -10px;
+        margin: 15px;
+        font-size: 70px;
+    }
+
+    .tempAverageDegrees {
+        color: rgb(229, 206, 153);
+        position: relative;
+        top: -10px;
+        margin: 15px;
+        font-size: 70px;
+    }
+
+    .tempHighDegrees {
+        color: rgb(234, 172, 90);
+        position: relative;
+        top: -10px;
+        margin: 15px;
+        font-size: 70px;
+    }
+
+    .tempExtremeDegrees {
+        color: rgb(255, 117, 42);
+        position: relative;
+        top: -10px;
+        margin: 15px;
+        font-size: 70px;
+    }
+
+    .feelsLike {
+        position: relative;
+        top: -16px;
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    .OtherInformation {
+        position: relative;
+        padding: 10px;
+        bottom: 0;
+        left: 0;
+        margin: 0 auto;
+        list-style: none;
+        line-height: 2;
+        font-weight: 600;
+        font-size: 20px;
+        color: rgba(254, 254, 254, 0.6);
+        word-wrap: break-word;
+    }
+
+    .OtherInformationForecast {
+        position: relative;
+        padding: 10px;
+        bottom: 0;
+        left: 0;
+        margin: 0 auto;
+        display: inline-flex;
+        flex-direction: column;
+        list-style: none;
+        line-height: 2;
+        font-weight: 600;
+        font-size: 20px;
+        color: rgba(254, 254, 254, 0.6);
+        word-wrap: break-word;
+    }
+
+    /*=========== Currency ==============*/
+    .countryInfo {
+        position: relative;
+        color: rgba(254, 254, 254, 0.6);
+        bottom: -1rem;
+        left: 8rem;
+        height: 70px;
+        margin: 0 auto;
+        max-width: 100%;
+        list-style-type: none;
+        font-weight: 600;
+        font-size: 16px;
+    }
+                .countryInfo>h5 {
+                    position: relative;
+                    max-width: 100%;
+                    margin-bottom: 30px;
+                    text-align: left;
+                    font-size: 18px;
+                }
+                                                         /* Second column */
+                                                         .countryInfoItemsSecondColon {
+                                                             top: 95px;
+                                                         }
+                            
+                                                    
+}
+
+@media(max-width: 767px) {
+    .AlternativeSearchResult {
+        position: relative;
+        display: inline-flex;
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 33rem;
+        margin-top: 40px;
+        padding-left: 15px;
+        line-height: 1.6;
+        font-size: 1.2em;
+    }
+
+    .city {
+        margin: 0;
+        line-height: 1.8;
+        max-width: 100%;
+        font-size: 25px;
+        font-weight: 600;
+    }
+    
+
+    .cityNative {
+        max-width: 100%;
+    }
+
+    .ipAddr {
+        font-size: 15px;
+        line-height: 1.3;
+    }
+
+                        .flex {
+                            display: inline-flex;
+                            align-items: center;
+                            width: 80%;
+                            position: relative;
+                            left: 0;
+                            top: 0;
+                        }
+
+    .OtherInformation {
+        position: relative;
+        padding: 0;
+        margin: 10px auto;
+        width: 100%;
+        bottom: -2rem;
+        left: -5rem;
+        display:flex;
+        flex-direction: column;
+        line-height: 2.2;
+        font-weight: 600;
+        font-size: 15px;
+        color: rgba(254, 254, 254, 0.6);
+        word-wrap: none;
+        white-space: nowrap;
+    }
+
+    .OtherInformationIcon {
+        max-width: 23px;
+        margin-right: 10px;
+    }
+
+    /* Next two days weather info*/
+    .OtherInformationForecast {
+        position: relative;
+        padding: 0;
+        bottom: -4rem;
+        left: 0;
+        display: inline-flex;
+        flex-direction: column;
+        list-style: none;
+        line-height: 2.2;
+        font-weight: 600;
+        font-size: 16px;
+        color: rgba(254, 254, 254, 0.6);
+        word-wrap: break-word;
+    }
+
+    /*=========== currency ==============*/
+    .countryInfo {
+        position: absolute;
+        width: 100%;
+        margin: 0 auto;
+        color: rgba(254, 254, 254, 0.6);
+        bottom: -8rem;
+        left: -1rem;
+        list-style-type: none;
+        font-weight: 600;
+        font-size: 15px;
+
+    }
+
+    .countryInfo>h5 {
+        position: relative;
+        max-width: 70%;
+        margin-bottom: 30px;
+        text-align: center;
+        font-size: 18px;
+    }
+
+    .countryInfoItems {
+        margin-bottom: 10px;
+    }
+
+    .curencyVallue {
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    /* Second column */
+    .countryInfoItemsSecondColon {
+        position: absolute;
+        left: 200px;
+        top: 115px;
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 5px;
+    }
+
+    .countryInfoItemsSecondColon li {
+        width: 100%;
+    }
+
+    .tempCold {
+        color: rgb(207, 228, 234);
+        padding: 22px;
+        font-size: 60px;
+        font-weight: 300;
+    }
+
+    .tempVeryCold {
+        color: rgb(82, 154, 221);
+        padding: 22px;
+        font-size: 60px;
+        font-weight: 300;
+    }
+
+    .temp {
+        color: rgb(234, 234, 207);
+        padding: 22px;
+        font-size: 60px;
+        font-weight: 300;
+    }
+
+    .tempAverageDegrees {
+        color: rgb(229, 206, 153);
+        padding: 22px;
+        font-size: 60px;
+        font-weight: 300;
+    }
+
+    .tempHighDegrees {
+        color: rgb(234, 172, 90);
+        padding: 22px;
+        font-size: 60px;
+        font-weight: 300;
+    }
+
+    .tempExtremeDegrees {
+        color: rgb(255, 117, 42);
+        padding: 22px;
+        font-size: 60px;
+        font-weight: 300;
+    }
+
+    .feelsLike {
+        position: relative;
+        top: -16px;
+        font-size: 18px;
+        font-weight: 400;
+    }
+
 }

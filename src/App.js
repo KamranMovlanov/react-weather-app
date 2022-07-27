@@ -13,8 +13,6 @@ import WeatherTimeline from './components/WeatherTimeLine/WeatherTimeline';
 import Search from './components/Search/Search';
 
 
-
-
 const api = {
   apiKey: process.env.REACT_APP_APIKEY,
   baseURL: "https://api.weatherapi.com/v1/forecast.json?",
@@ -39,20 +37,18 @@ function App() {
   const navigate = useNavigate()
 
   //Unsplash background
-  // useEffect(() => {
-  //   if (!isEmpty(ipData) && !isEmpty(currentWeather)) {
-  //     // window.document.getElementsByTagName("body")[0].style.background = `url(https://source.unsplash.com/random/1280*760/?${ipData.data.city},fog) center`
-  //     // TODO: Сделай определение размера экрана и делай запросы в зависимости от найденного разрешения !
-  //     // console.log(`url(https://source.unsplash.com/random/1366*768/?Wallpapers?orientation=landscape,${currentWeather.data.current.is_day ? "sun" : "moon"})`)
-  //     window.document.getElementsByTagName("body")[0].style.background = `url(https://source.unsplash.com/random/1980*1080/?Wallpapers,${currentWeather.data.current.is_day ? "nature" : "colors"}) center`
-  //     window.document.getElementsByTagName("body")[0].style.backgroundRepeat = 'no-repeat'
-  //     window.document.getElementsByTagName("body")[0].style.backgroundSize = 'cover'
-  //   }
-  // }, [ipData, currentWeather])
+  useEffect(() => {
+    if (!isEmpty(ipData) && !isEmpty(currentWeather)) {
+      const w = window.innerWidth;
+      const h = window.innerHeight;
+      window.document.getElementsByTagName("body")[0].style.background = `url(https://source.unsplash.com/random/${w}*${h}/?Wallpapers,${currentWeather.data.current.is_day ? "colors" : "space"}) center`
+      window.document.getElementsByTagName("body")[0].style.backgroundRepeat = 'no-repeat'
+      window.document.getElementsByTagName("body")[0].style.backgroundSize = 'cover'
+    }
+  }, [ipData, currentWeather])
 
-  //=================== TODO:  Узнай как в react 18 вызвать useEffect 1 раз ! =====================
+
   // Ip Addr data
-  //FIXME: response is undefined эта ошибка появляется и сайт не грузится.. сделай условия, если response is undefined, то сделай еще один(или два) запрос, если и это не поможет, то location api
   useEffect(() => {
     const fetchData = async () => {
       return await axios.get(`${ipAddrApi.baseURL}?api_key=${ipAddrApi.apiKey}&`, { timeout: 3000, })
@@ -67,16 +63,7 @@ function App() {
             console.log(error.response.data);
             console.log(error.response.status);
             console.log(error.response.headers);
-            // if(error.message === 'timeout of 3000ms exceeded'){
-            //   setInterval(() => {
-            //     fetchData()
-            //   }, 4000)
-            // }
             if (error.response.status === 429) {
-
-              // setInterval(() => {
-              //   fetchData()
-              // }, 6000)
             }
           }
         })
@@ -89,7 +76,7 @@ function App() {
 
   }, [ipData, navigate])
 
-  //Current Weather
+  //Current-local Weather
   useEffect(() => {
     const fetchData = async () => {
       return await axios.get(`${api.baseURL}key=${api.apiKey}&q=${ipData.data.region}&lang=ru&days=7&ip&aqi=yes&alerts=no`, { timeout: 1000, })
@@ -144,15 +131,14 @@ function App() {
   useEffect(() => {
     let countryCur = null
 
+    //Looking in CountryQuery currenci base
     try {
-      // eslint-disable-next-line no-unused-expressions
       !isEmpty(searchWeatherData.data) ?
         countryCur = Object.entries(CountryQuery.find("capital", searchWeatherData.data.location.tz_id.split('/')[1]).currencies)[0][0]
         :
         countryCur = "USD"
     }
     catch (error) {
-      // console.log("Cur catch: ", Object.entries(CountryQuery.findByNameCommon(searchWeatherData.data.location.country).currencies)[0][0])
       try {
         Array.isArray(Object.entries(CountryQuery.findByNameCommon(searchWeatherData.data.location.country).currencies)) ?
           countryCur = Object.entries(CountryQuery.findByNameCommon(searchWeatherData.data.location.country).currencies)[0][0]
@@ -197,6 +183,7 @@ function App() {
   }, [ipData, searchWeatherData])
 
 
+  //Location weather
   const locationWeather = async (e) => {
     if (e._reactName === 'onClick' && navigator.geolocation) {
       e.preventDefault();
@@ -219,6 +206,7 @@ function App() {
 
   }
 
+  //Search
   const search = async (e) => {
     if (e.key === 'Enter' || e._reactName === 'onClick') {
       e.preventDefault();
@@ -248,9 +236,8 @@ function App() {
 
   return (
     <div className='App'>
-
       <div className='card'>
-        <Search query={query} search={search} locationWeather={locationWeather} setQuery={setQuery} />
+        <Search query={query} search={search} locationWeather={locationWeather} setQuery={setQuery} errStatus={errStatus} />
         <ErrorBoundary >
           <GlobalWeatherPage initialWeather={currentWeather} setSearchWeatherData={setSearchWeatherData} searchResult={searchWeatherData} twoDaysWeather={toggle}
             setToggle={setToggle} ipData={ipData} exchangeRate={exchangeRate} setErrStatus={setErrStatus} />

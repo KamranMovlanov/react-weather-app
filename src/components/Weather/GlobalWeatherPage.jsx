@@ -13,7 +13,6 @@ import SearchNextDaysWeather from "./SearchWeather/SearchNextDaysWeather/SearchN
 function GlobalWeatherPage(props) {
   moment.locale("ru");
   const d = new Date();
-  const n = d.getDay();
 
   if (isEmpty(props.initialWeather.data)) {
     return <div className={style.loader}></div>;
@@ -187,7 +186,6 @@ function GlobalWeatherPage(props) {
               calcOfDaylightHours={calcOfDaylightHours}
               airQualityClassColor={airQualityClassColor}
               airQualityDetector={airQualityDetector}
-              setErrStatus={props.setErrStatus}
             />
 
             <Currency

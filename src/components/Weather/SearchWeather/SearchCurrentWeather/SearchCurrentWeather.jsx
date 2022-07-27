@@ -26,6 +26,7 @@ function SearchCurrentWeather(props) {
           : ""}
       </h2>
       <p>
+        {/* Native language city name */}
         {Object.entries(CountryQuery.find("capital", props.searchResult.data.location.tz_id.split("/")[1]).currencies)[0][0]
           ? Object.keys(CountryQuery.find("capital", props.searchResult.data.location.tz_id.split("/")[1])["name"]["native"]).length > 1
             ? Object.values(CountryQuery.find("capital", props.searchResult.data.location.tz_id.split("/")[1])["name"]["native"])[0]["official"]
