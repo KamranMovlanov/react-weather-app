@@ -7,7 +7,7 @@
   
   .searchBar {
     border: none;
-    background-color: rgba(130, 130, 130, 0);
+    background-color: rgba(181, 25, 25, 0);
     padding: 10px;
     border-radius: 10px;
     width: 250px;
@@ -34,7 +34,7 @@
   .searchBtn{
     outline: none;
     border: none;
-    background-color: rgba(130, 130, 130, 0);
+    background-color: rgba(130, 130, 130, .2);
     border-radius: 12px;
     color: rgb(121, 130, 227);
     cursor: pointer;
@@ -53,7 +53,7 @@
   .locationBtn{
     outline: none;
     border: none;
-    background-color: rgba(130, 130, 130, 0);
+    background-color: rgba(130, 130, 130, .2);
     border-radius: 12px;
     min-height: 40px;
     min-width: 40px;
