@@ -26,7 +26,7 @@ class ErrorBoundaryNotFound extends Component {
             Назад
           </Link>
           <div className='backgroundWrapper'>
-            <img className={style.background} src='/Laptop2.svg' alt='Not found'></img>
+            <img className={style.background} src='./Laptop2.svg' alt='Not found'></img>
           </div>
         </div>
       );
