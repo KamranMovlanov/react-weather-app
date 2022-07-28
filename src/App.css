@@ -20,18 +20,8 @@
 }
 
 
-@media(max-width: 1300px){ 
-	.card{
 
-	}
-}
 
-/* @media(max-width: 992px){ 
-	.card{
-    min-width: 100vw;
-    min-height: 100vh;
-	}
-}  */
 
 @media(max-width: 767px){ 
 .App{
@@ -42,7 +32,10 @@
 	.card{
 		min-width: 100vw;
     min-height: 100vh;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-image: url("../public/daniel-olah-Cevnk8kiTSo-unsplash.jpg");  
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     margin: 0;
     border-radius: 0;
     box-shadow:none;
