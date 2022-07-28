@@ -14,6 +14,7 @@ function SearchCurrentWeather(props) {
     <>
       <button
         className={style.currentWeatherBtn}
+        alt='back'
         onClick={() => {
           props.setSearchWeatherData({});
         }}>

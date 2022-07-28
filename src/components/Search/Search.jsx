@@ -14,7 +14,7 @@ function Search(props) {
             onKeyPress={props.search}
             placeholder='Поиск по городу или стране'></input>
 
-          <button onClick={props.search} className={style.searchBtn}>
+          <button onClick={props.search} className={style.searchBtn} alt='search'>
             <svg
               stroke='currentColor'
               fill='currentColor'
@@ -27,7 +27,7 @@ function Search(props) {
             </svg>
           </button>
 
-          <button onClick={props.locationWeather} className={style.locationBtn}>
+          <button onClick={props.locationWeather} className={style.locationBtn} alt='location'>
             <svg xmlns='http://www.w3.org/2000/svg' height='1.5em' width='2.2em' viewBox='0 0 24 24'>
               <path
                 fill='#6C72F3'

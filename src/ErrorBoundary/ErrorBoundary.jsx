@@ -31,6 +31,7 @@ class ErrorBoundary extends Component {
           <ErrorBoundaryNotFound>
             <button
               className={style.backWeatherBtn}
+              alt='back'
               onClick={() => {
                 this.props.children.props.setSearchWeatherData({});
                 errСancellation();

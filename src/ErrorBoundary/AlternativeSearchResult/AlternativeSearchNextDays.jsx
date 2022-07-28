@@ -13,6 +13,7 @@ function AlternativeSearchNextDays(props) {
     <>
       <button
         className={style.currentWeatherBtn}
+        alt='back'
         onClick={() => {
           props.setToggle(0);
         }}>

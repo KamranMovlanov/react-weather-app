@@ -11,6 +11,7 @@ function NextDaysWeather(props) {
       <button
         className={style.currentWeatherBtn}
         key={props.i}
+        alt='back'
         onClick={() => {
           props.setToggle(0);
         }}>
