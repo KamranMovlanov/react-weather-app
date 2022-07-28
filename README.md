@@ -1,1 +1,1 @@
-# react weather app
+# react weather and currency app
