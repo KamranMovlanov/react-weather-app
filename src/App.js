@@ -41,13 +41,21 @@ function App() {
     if (!isEmpty(ipData) && !isEmpty(currentWeather)) {
       const w = window.innerWidth;
       const h = window.innerHeight;
-      window.document.getElementsByTagName("body")[0].style.background = `url(https://source.unsplash.com/random/${w}*${h}/?Wallpapers,${currentWeather.data.current.is_day ? "colorfull" : "dark-colors"}) center`
-      window.document.getElementsByTagName("body")[0].style.backgroundRepeat = 'no-repeat'
-      window.document.getElementsByTagName("body")[0].style.backgroundSize = 'cover'
+      if (w > 750) {
+        window.document.getElementsByTagName("body")[0].style.background = `url(https://source.unsplash.com/random/${w}*${h}/?Wallpapers,${currentWeather.data.current.is_day ? "colorfull" : "dark-colors"}) center`
+        window.document.getElementsByTagName("body")[0].style.backgroundRepeat = 'no-repeat'
+        window.document.getElementsByTagName("body")[0].style.backgroundSize = 'cover'
+      }
+
     }
   }, [ipData, currentWeather])
 
-
+  /*
+  Uncaught (in promise) TypeError: Cannot read properties of undefined (reading 'ok')
+      at App.js:111:25
+  (anonymous) @ App.js:111
+  
+  */
   // Ip Addr data
   useEffect(() => {
     const fetchData = async () => {
@@ -78,8 +86,10 @@ function App() {
   //Current-local Weather
   useEffect(() => {
     const fetchData = async () => {
-      return await axios.get(`${api.baseURL}key=${api.apiKey}&q=${ipData.data.region}&lang=ru&days=7&ip&aqi=yes&alerts=no`, { timeout: 1000, })
+      console.log("Ip test: ", ipData.data.region)
+      return await axios.get(`${api.baseURL}key=${api.apiKey}&q=${ipData.data.region !== null || undefined ? ipData.data.region : "Moscow"}&lang=ru&days=7&ip&aqi=yes&alerts=no`, { timeout: 1000, })
         .catch(error => {
+          console.log(error)
           if (error.response) {
             alert(`Ошибка: ${error.response.status} `)
             console.log(error.response.data);
@@ -93,29 +103,14 @@ function App() {
                     console.log(error.response.status);
                   }
                 })
-                .then((response) => {
-                  if (!response.ok) {
-                    if (typeof response === 'object') return response;
-                    if (typeof response === 'string') return JSON.parse(response)
-                  }
-                })
                 .then((data) => {
                   setCurrentWeather(data)
-                  // navigate("/current", { replace: true })
                 })
             })
-          }
-
-        })
-        .then((response) => {
-          if (!response.ok) {
-            if (typeof response === 'object') return response;
-            if (typeof response === 'string') return JSON.parse(response)
           }
         })
         .then((data) => {
           setCurrentWeather(data)
-
         })
     }
 
