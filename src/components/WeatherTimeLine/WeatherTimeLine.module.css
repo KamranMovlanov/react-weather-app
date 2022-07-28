@@ -66,43 +66,6 @@
 }
 
 
-/* .loader {
-    animation: spinningColor 1.5s ease-in-out infinite;
-    border: 5px double #a896fd;
-    border-radius: 50%;
-    width: 50px;
-    margin: 30px 20px;
-    height: 50px;
-}
-
-@keyframes spinningColor {
-    0% {
-        transform: rotate(360deg);
-        border-top: 5px dashed #f56682;
-        border-bottom: 5px dashed #387eff;
-    }
-
-    25% {
-        border-top: 5px dashed #f591a6;
-        border-bottom: 5px dashed #6da7f7;
-    }
-
-    50% {
-        border-top: 5px dashed #fd878e;
-        border-bottom: 5px dashed #4ba3ff;
-    }
-
-    75% {
-        border-top: 5px dashed #f57f8f;
-        border-bottom: 5px dashed #569dff;
-    }
-
-    100% {
-        border-top: 5px dashed #f56682;
-        border-bottom: 5px dashed #387eff;
-    }
-} */
-
 .flexTimeLine {
     display: flex;
     text-align: center;
@@ -191,9 +154,8 @@
 .timelineContainer {
     width: 100%;
     margin: 20px auto;
-    /* margin-bottom: 20px; */
-    /* margin: 10px; */
-    box-shadow: rgba(214, 76, 12, 0.6) 0px 0px 0px 2px;
+    box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+    background-image: radial-gradient(circle farthest-corner at 10% 20%, rgba(105, 105, 236, .6) 0.1%, rgba(31, 31, 112, .6) 100.2%);
 }
 
 .container {

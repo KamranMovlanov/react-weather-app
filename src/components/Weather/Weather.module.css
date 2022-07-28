@@ -668,7 +668,7 @@
         flex-direction: column;
         max-width: 100%;
         margin-bottom: 33rem;
-        margin-top: 50px;
+        margin-top: 65px;
         padding: 0;
         line-height: 1.6;
         font-size: 1.2em;
@@ -711,7 +711,7 @@
         flex-direction: column;
         line-height: 2.2;
         font-weight: 600;
-        font-size: 15px;
+        font-size: 14px;
         color: rgba(254, 254, 254, 0.6);
         word-wrap: break-word;
     }
@@ -731,7 +731,7 @@
             list-style: none;
             line-height: 2.2;
             font-weight: 600;
-            font-size: 16px;
+            font-size: 14px;
             color: rgba(254, 254, 254, 0.6);
             word-wrap: break-word;
         }
@@ -746,16 +746,16 @@
         left: -1rem;
         list-style-type: none;
         font-weight: 600;
-        font-size: 15px;
+        font-size: 14px;
         
     }
     .countryInfo>h5{
         position: relative;
-        max-width: 70%;
+        max-width: 80%;
         margin-bottom: 30px;
         text-align: center;
         font-size: 18px;
-        color: #6c4cee;
+        color: #574cee;
     }
     
     .countryInfoItems{

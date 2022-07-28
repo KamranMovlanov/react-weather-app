@@ -174,7 +174,7 @@
         overflow-x: scroll;
         position: relative;
         margin: 0 auto;
-        left: 0px;
+        left: -1rem;
         top: -4rem;
         flex-direction: row;
         justify-content: center;
@@ -194,8 +194,8 @@
         margin: 16px;
         padding: 20px;
         border-radius: 225px;
-        background-color: #10222b7a;
-        box-shadow: rgba(214, 76, 12, 0.5) 0px 0px 0px 2px;
+        box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+        background-image: radial-gradient(circle farthest-corner at 10% 20%, rgba(105, 105, 236, .6) 0.1%, rgba(31, 31, 112, .6) 100.2%);
         -webkit-transition: 0.25s;
         -o-transition: 0.25s;
         transition: 0.25s;
