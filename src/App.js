@@ -87,31 +87,37 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       console.log("Ip test: ", ipData.data.region)
-      return await axios.get(`${api.baseURL}key=${api.apiKey}&q=${ipData.data.region !== null || undefined ? ipData.data.region : "Moscow"}&lang=ru&days=7&ip&aqi=yes&alerts=no`, { timeout: 1000, })
-        .catch(error => {
-          console.log(error)
-          if (error.response) {
-            alert(`Ошибка: ${error.response.status} `)
-            console.log(error.response.data);
-            console.log(error.response.status);
-            navigator.geolocation.getCurrentPosition(async (position) => {
-              return axios.get(`${api.baseURL}key=${api.apiKey}&q=${position.coords.latitude},${position.coords.longitude}&lang=ru&days=7&aqi=yes&alerts=no`, { timeout: 1000, })
-                .catch(function (error) {
-                  if (error.response) {
-                    alert(`Ошибка: ${error.response.status}`)
-                    console.log(error.response.data);
-                    console.log(error.response.status);
-                  }
-                })
-                .then((data) => {
-                  setCurrentWeather(data)
-                })
+      if (ipData.data.region !== null) {
+        return await axios.get(`${api.baseURL}key=${api.apiKey}&q=${ipData.data.region}&lang=ru&days=7&ip&aqi=yes&alerts=no`, { timeout: 3000, })
+          .catch(error => {
+            console.log(error)
+            if (error.response) {
+              alert(`Ошибка: ${error.response.status} `)
+              console.log(error.response.data);
+              console.log(error.response.status);
+            }
+          })
+          .then((data) => {
+            console.log("ipData = !== null", data)
+            setCurrentWeather(data)
+          })
+      }
+      if (ipData.data.region === null) {
+        navigator.geolocation.getCurrentPosition(async (position) => {
+          return axios.get(`${api.baseURL}key=${api.apiKey}&q=${position.coords.latitude},${position.coords.longitude}&lang=ru&days=7&aqi=yes&alerts=no`, { timeout: 1000, })
+            .catch(function (error) {
+              if (error.response) {
+                alert(`Ошибка: ${error.response.status}`)
+                console.log(error.response.data);
+                console.log(error.response.status);
+              }
             })
-          }
+            .then((data) => {
+              console.log("ipData === null", data)
+              setCurrentWeather(data)
+            })
         })
-        .then((data) => {
-          setCurrentWeather(data)
-        })
+      }
     }
 
     if (!isEmpty(ipData)) {
