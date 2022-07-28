@@ -22,7 +22,7 @@ class ErrorBoundaryNotFound extends Component {
       this.props.children[1].props.setErrStatus(true);
       return (
         <div className={style.AlternativeSearchResult}>
-          <Link className={style.currentWeatherBtn} reloadDocument to={"/"}>
+          <Link className={style.currentWeatherBtn} reloadDocument to={"/react-weather-app/"}>
             Назад
           </Link>
           <div className='backgroundWrapper'>
