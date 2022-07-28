@@ -1,14 +1,28 @@
-.AlternativeSearchResult{
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+.AlternativeSearchResult {
     position: relative;
-        display: inline-flex;
-        flex-direction: column;
-        order: 0;
-        max-width: 100%;
-        margin-bottom: 80px;
-        padding: 10px;
-        max-height: 23rem;
-        line-height: 1.4;
-        font-size: 18px;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-ordinal-group: 1;
+    -ms-flex-order: 0;
+    order: 0;
+    max-width: 100%;
+    margin-bottom: 80px;
+    padding: 10px;
+    max-height: 23rem;
+    line-height: 1.4;
+    font-size: 18px;
 }
 
 /*============== TEMP ===================*/
@@ -74,16 +88,16 @@
 
 .OtherInformation {
     position: relative;
-        padding: 10px;
-        bottom: 18rem;
-        left: 20rem;
-        max-width: 60%;
-        list-style: none;
-        line-height: 2;
-        font-weight: 600;
-        font-size: 14px;
-        color: rgba(254, 254, 254, 0.6);
-        word-wrap: break-word;
+    padding: 10px;
+    bottom: 18rem;
+    left: 20rem;
+    max-width: 60%;
+    list-style: none;
+    line-height: 2;
+    font-weight: 600;
+    font-size: 14px;
+    color: rgba(254, 254, 254, 0.6);
+    word-wrap: break-word;
 }
 
 .OtherInformationIcon {
@@ -93,23 +107,24 @@
     border-radius: 10px;
 }
 
-.daylightHours{
+.daylightHours {
     font-size: 15px;
 }
 
 /*=========== Currency ==============*/
-.countryInfo{
+.countryInfo {
     position: absolute;
-        color: rgba(254, 254, 254, 0.6);
-        bottom: 15rem;
-        right: 17rem;
-        height: 50px;
-        max-width: 27rem;
-        list-style-type: none;
-        font-weight: 600;
-        font-size: 14px;
+    color: rgba(254, 254, 254, 0.6);
+    bottom: 15rem;
+    right: 17rem;
+    height: 50px;
+    max-width: 27rem;
+    list-style-type: none;
+    font-weight: 600;
+    font-size: 14px;
 }
-.countryInfo>h5{
+
+.countryInfo>h5 {
     font-size: 14px;
     margin-bottom: 20px;
     text-align: center;
@@ -118,12 +133,16 @@
 }
 
 .curencyVallue {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
     justify-content: flex-start;
     margin-bottom: 10px;
 }
 
-.countryInfoItems{
+.countryInfoItems {
     margin-bottom: 8px;
 }
 
@@ -132,9 +151,18 @@
     position: absolute;
     left: 200px;
     top: 95px;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
     display: inline-flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
     align-items: flex-start;
     padding: 5px;
 }
@@ -146,6 +174,8 @@
 /*=========== Air Quality ==============*/
 .airQuality {
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     margin-bottom: 5px;
 }
@@ -155,25 +185,29 @@
 }
 
 .airQualityTitle {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
     display: inline-flex;
     margin-right: 10px;
 }
 
-.questionIconWrapper{
+.questionIconWrapper {
     position: absolute;
     margin-left: 15px;
     cursor: pointer;
 }
 
-.questionIcon{
+.questionIcon {
     width: 30px;
     -webkit-transition: 0.25s;
     -o-transition: 0.25s;
     transition: 0.25s;
 }
 
-.questionIcon:hover{
+.questionIcon:hover {
     width: 40px;
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
     transform: rotate(360deg);
 }
 
@@ -199,7 +233,7 @@
     color: rgb(197, 0, 26);
 }
 
-.airDanger{
+.airDanger {
     color: rgb(150, 1, 196);
 }
 
@@ -224,7 +258,7 @@
     color: rgb(197, 0, 26);
 }
 
-.uvProgressBar{
+.uvProgressBar {
     position: relative;
     text-align: center;
     width: 80px;
@@ -234,32 +268,39 @@
     overflow: hidden;
     border-radius: 2px;
     background-color: #c2c2c2bf;
+    -webkit-appearance: none;
+    -moz-appearance: none;
     appearance: none;
+    -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, .8) inset;
     box-shadow: 0 2px 2px rgba(0, 0, 0, .8) inset;
     opacity: .6;
 }
 
 
 .uvProgressBar[value]::-moz-progress-bar {
-      background-color: #292929ac;
-      border-radius: 2px;
-      border: 0;
-      appearance: none;
-  }
-.uvProgressBar[value]::-webkit-progress-bar {
-      background-color: #3c3c3c85;
-      border-radius: 2px;
-      border: 0;
-      appearance: none;
-  }
+    background-color: #292929ac;
+    border-radius: 2px;
+    border: 0;
+    -moz-appearance: none;
+    appearance: none;
+}
 
-  .uvProgressBar::-webkit-progress-value{
+.uvProgressBar[value]::-webkit-progress-bar {
+    background-color: #3c3c3c85;
+    border-radius: 2px;
+    border: 0;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.uvProgressBar::-webkit-progress-value {
     width: 80px;
     height: 9px;
     border: 0;
     overflow: hidden;
     border-radius: 2px;
     /* background-color: #eeeded; */
+    -webkit-appearance: none;
     appearance: none;
     text-align: center;
 }
@@ -270,10 +311,15 @@
     padding: 10px;
     bottom: 220px;
     left: 350px;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
     display: inline-flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     list-style: none;
-    line-height: 2; 
+    line-height: 2;
     font-weight: 600;
     font-size: 15px;
     color: rgba(254, 254, 254, 0.6);
@@ -287,7 +333,7 @@
     font-weight: 400;
 }
 
-.ipAddr{
+.ipAddr {
     font-size: 14px;
     line-height: .3;
 }
@@ -302,7 +348,11 @@
 
 
 .flex {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
     display: inline-flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     width: 20%;
     position: relative;
@@ -340,8 +390,11 @@
     position: relative;
     z-index: 0;
     border-radius: 8px;
+    -moz-user-select: none;
+    -ms-user-select: none;
     user-select: none;
     -webkit-user-select: none;
+    -ms-touch-action: manipulation;
     touch-action: manipulation;
     -webkit-transition: 0.25s;
     -o-transition: 0.25s;
@@ -350,11 +403,18 @@
 
 .currentWeatherBtn:hover {
     color: rgb(179, 179, 179);
+    -webkit-box-shadow: rgba(201, 201, 201, 0.1) 0px 2px 15px, rgba(62, 62, 62, 0.2) 0px 4px 15px;
     box-shadow: rgba(201, 201, 201, 0.1) 0px 2px 15px, rgba(62, 62, 62, 0.2) 0px 4px 15px;
 }
 
 .currentWeatherBtn:before {
     content: "";
+    background: -o-linear-gradient(45deg,
+            #5f5f5f94,
+            #b2b2b29b,
+            #4848488f,
+            #3636367d,
+            #2a4e67);
     background: linear-gradient(45deg,
             #5f5f5f94,
             #b2b2b29b,
@@ -370,10 +430,27 @@
     -webkit-filter: blur(5px);
     width: calc(100% + 4px);
     height: calc(100% + 4px);
+    -webkit-animation: glowing-currentWeatherBtn 15s linear infinite;
     animation: glowing-currentWeatherBtn 15s linear infinite;
+    -webkit-transition: opacity 0.3s ease-in-out;
+    -o-transition: opacity 0.3s ease-in-out;
     transition: opacity 0.3s ease-in-out;
     border-radius: 10px;
     opacity: .4;
+}
+
+@-webkit-keyframes glowing-currentWeatherBtn {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
 }
 
 @keyframes glowing-currentWeatherBtn {
@@ -417,8 +494,11 @@
     position: relative;
     z-index: 0;
     border-radius: 8px;
+    -moz-user-select: none;
+    -ms-user-select: none;
     user-select: none;
     -webkit-user-select: none;
+    -ms-touch-action: manipulation;
     touch-action: manipulation;
     -webkit-transition: 0.25s;
     -o-transition: 0.25s;
@@ -427,11 +507,18 @@
 
 .backWeatherBtn:hover {
     color: rgb(179, 179, 179);
+    -webkit-box-shadow: rgba(201, 201, 201, 0.1) 0px 2px 15px, rgba(62, 62, 62, 0.2) 0px 4px 15px;
     box-shadow: rgba(201, 201, 201, 0.1) 0px 2px 15px, rgba(62, 62, 62, 0.2) 0px 4px 15px;
 }
 
 .backWeatherBtn:before {
     content: "";
+    background: -o-linear-gradient(45deg,
+            #5f5f5f94,
+            #b2b2b29b,
+            #4848488f,
+            #3636367d,
+            #2a4e67);
     background: linear-gradient(45deg,
             #5f5f5f94,
             #b2b2b29b,
@@ -447,10 +534,27 @@
     -webkit-filter: blur(5px);
     width: calc(100% + 4px);
     height: calc(100% + 4px);
+    -webkit-animation: glowing-currentWeatherBtn 15s linear infinite;
     animation: glowing-currentWeatherBtn 15s linear infinite;
+    -webkit-transition: opacity 0.3s ease-in-out;
+    -o-transition: opacity 0.3s ease-in-out;
     transition: opacity 0.3s ease-in-out;
     border-radius: 10px;
     opacity: .4;
+}
+
+@-webkit-keyframes glowing-backWeatherBtn {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
 }
 
 @keyframes glowing-backWeatherBtn {
@@ -483,8 +587,15 @@
 @media(max-width: 1320px) {
     .AlternativeSearchResult {
         position: relative;
+        display: -webkit-inline-box;
+        display: -ms-inline-flexbox;
         display: inline-flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
+        -webkit-box-ordinal-group: 1;
+        -ms-flex-order: 0;
         order: 0;
         max-width: 100%;
         margin-bottom: 80px;
@@ -520,29 +631,46 @@
         font-weight: 600;
         font-size: 14px;
     }
-                /* Second column */
-                .countryInfoItemsSecondColon {
-                    position: absolute;
-                    left: 200px;
-                    top:  75px;
-                    display: inline-flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: flex-start;
-                    padding: 5px;
-                }
-        
-                .countryInfoItemsSecondColon li {
-                    width: 100%;
-                }
+
+    /* Second column */
+    .countryInfoItemsSecondColon {
+        position: absolute;
+        left: 200px;
+        top: 75px;
+        display: -webkit-inline-box;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+        align-items: flex-start;
+        padding: 5px;
+    }
+
+    .countryInfoItemsSecondColon li {
+        width: 100%;
+    }
 }
 
 
 @media(max-width: 950px) {
     .AlternativeSearchResult {
         position: relative;
+        display: -webkit-inline-box;
+        display: -ms-inline-flexbox;
         display: inline-flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
+        -webkit-box-ordinal-group: 1;
+        -ms-flex-order: 0;
         order: 0;
         width: 100%;
         margin-top: 40px;
@@ -629,7 +757,12 @@
         bottom: 0;
         left: 0;
         margin: 0 auto;
+        display: -webkit-inline-box;
+        display: -ms-inline-flexbox;
         display: inline-flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
         list-style: none;
         line-height: 2;
@@ -652,25 +785,32 @@
         font-weight: 600;
         font-size: 16px;
     }
-                .countryInfo>h5 {
-                    position: relative;
-                    max-width: 100%;
-                    margin-bottom: 30px;
-                    text-align: left;
-                    font-size: 18px;
-                }
-                                                         /* Second column */
-                                                         .countryInfoItemsSecondColon {
-                                                             top: 95px;
-                                                         }
-                            
-                                                    
+
+    .countryInfo>h5 {
+        position: relative;
+        max-width: 100%;
+        margin-bottom: 30px;
+        text-align: left;
+        font-size: 18px;
+    }
+
+    /* Second column */
+    .countryInfoItemsSecondColon {
+        top: 95px;
+    }
+
+
 }
 
 @media(max-width: 767px) {
     .AlternativeSearchResult {
         position: relative;
+        display: -webkit-inline-box;
+        display: -ms-inline-flexbox;
         display: inline-flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
         width: 100%;
         margin-bottom: 33rem;
@@ -687,7 +827,7 @@
         font-size: 25px;
         font-weight: 600;
     }
-    
+
 
     .cityNative {
         max-width: 100%;
@@ -698,14 +838,18 @@
         line-height: 1.3;
     }
 
-                        .flex {
-                            display: inline-flex;
-                            align-items: center;
-                            width: 80%;
-                            position: relative;
-                            left: 0;
-                            top: 0;
-                        }
+    .flex {
+        display: -webkit-inline-box;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        width: 80%;
+        position: relative;
+        left: 0;
+        top: 0;
+    }
 
     .OtherInformation {
         position: relative;
@@ -714,7 +858,12 @@
         width: 100%;
         bottom: -2rem;
         left: -6rem;
-        display:flex;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
         line-height: 2.2;
         font-weight: 600;
@@ -735,7 +884,12 @@
         padding: 0;
         bottom: -4rem;
         left: 0;
+        display: -webkit-inline-box;
+        display: -ms-inline-flexbox;
         display: inline-flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
         list-style: none;
         line-height: 2.2;
@@ -773,7 +927,11 @@
     }
 
     .curencyVallue {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
         justify-content: flex-start;
         width: 100%;
         margin-bottom: 10px;
@@ -784,9 +942,18 @@
         position: absolute;
         left: 200px;
         top: 115px;
+        display: -webkit-inline-box;
+        display: -ms-inline-flexbox;
         display: inline-flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
+        -webkit-box-align: start;
+        -ms-flex-align: start;
         align-items: flex-start;
         padding: 5px;
     }

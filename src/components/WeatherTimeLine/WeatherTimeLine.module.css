@@ -1,5 +1,7 @@
 /*================ Timeline started ============== */
 .timelineContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     padding: 10px 0px;
     width: 100%;
@@ -11,9 +13,18 @@
 }
 
 .container {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
     display: inline-flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     margin-right: 15px;
     padding: 0px;
@@ -29,6 +40,7 @@
 
 .container:hover {
     background-color: rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: rgba(3, 102, 214, 0.2) 0px 0px 0px 2px;
     box-shadow: rgba(3, 102, 214, 0.2) 0px 0px 0px 2px;
 }
 
@@ -36,12 +48,22 @@
 
 
 .containerNextDay {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
     display: inline-flex;
     color: rgba(176, 176, 238, 0.85);
+    -webkit-box-shadow: rgba(0, 0, 0, .25) inset 0px 0px 7px;
     box-shadow: rgba(0, 0, 0, .25) inset 0px 0px 7px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     text-align: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     padding: 5px;
     min-height: 160px;
@@ -62,13 +84,18 @@
 
 .containerNextDay:hover {
     background-color: rgba(117, 115, 115, 0.4);
+    -webkit-box-shadow: rgba(3, 102, 214, 0.2) 0px 0px 0px 2px;
     box-shadow: rgba(3, 102, 214, 0.2) 0px 0px 0px 2px;
 }
 
 
 .flexTimeLine {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     text-align: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
 }
 
@@ -79,9 +106,15 @@
 }
 
 .dateTimeLine>img {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
     display: inline-flex;
     max-width: 20px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
 }
 
@@ -92,14 +125,20 @@
 }
 
 .dateTimeLineNextDay>img {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
     display: inline-flex;
     max-width: 20px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
 }
 
 /*============== TEMP ===================*/
-.tempTimeLineVeryCold{
+.tempTimeLineVeryCold {
     color: rgb(135, 181, 229);
     font-size: 25px;
     margin: 0px;
@@ -149,50 +188,54 @@
 }
 
 
-@media(max-width: 767px){ 
+@media(max-width: 767px) {
+
     /*================ Timeline started ============== */
-.timelineContainer {
-    width: 100%;
-    margin: 20px auto;
-    box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
-    background-image: radial-gradient(circle farthest-corner at 10% 20%, rgba(105, 105, 236, .6) 0.1%, rgba(31, 31, 112, .6) 100.2%);
-}
-
-.container {
-    margin-right: 10px;
-    min-height: 160px;
-    width: 100%;
-    font-size: 13px;
-    cursor: pointer;
-    border-radius: 0;
-    -webkit-transition: 0.35s;
-    -o-transition: 0.35s;
-    transition: 0.35s;
-}
-
-.dateTimeLine>img {
-    max-width: 18px;    
-}
-.dateTimeLine {
-    font-size: 18px;
-}
-
-.dateTimeLineNextDay>img {
-    max-width: 18px;
-}
-
-.windTimeLine {
-    font-size: 18px;
-    margin-top: 10px;
-    margin-bottom: 5px;
-}
-
-.windTimeLine>img {
-    width: 18px;
-}
-
-.iconTimeLine{
-    width: 45px;
-    height: 45px;
-}
+    .timelineContainer {
+        width: 100%;
+        margin: 20px auto;
+        -webkit-box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+        box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+        background-image: -o-radial-gradient(10% 20%, circle farthest-corner, rgba(105, 105, 236, .6) 0.1%, rgba(31, 31, 112, .6) 100.2%);
+        background-image: radial-gradient(circle farthest-corner at 10% 20%, rgba(105, 105, 236, .6) 0.1%, rgba(31, 31, 112, .6) 100.2%);
     }
+
+    .container {
+        margin-right: 10px;
+        min-height: 160px;
+        width: 100%;
+        font-size: 13px;
+        cursor: pointer;
+        border-radius: 0;
+        -webkit-transition: 0.35s;
+        -o-transition: 0.35s;
+        transition: 0.35s;
+    }
+
+    .dateTimeLine>img {
+        max-width: 18px;
+    }
+
+    .dateTimeLine {
+        font-size: 18px;
+    }
+
+    .dateTimeLineNextDay>img {
+        max-width: 18px;
+    }
+
+    .windTimeLine {
+        font-size: 18px;
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+
+    .windTimeLine>img {
+        width: 18px;
+    }
+
+    .iconTimeLine {
+        width: 45px;
+        height: 45px;
+    }
+}

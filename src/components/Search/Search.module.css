@@ -1,73 +1,85 @@
-.searchContainer {
-    position: relative;
-    display: inline-flex;
-    justify-content: center;
-    top: 15px;
-  }
-  
-  .searchBar {
-    border: none;
-    background-color: rgba(181, 25, 25, 0);
-    padding: 10px;
-    border-radius: 10px;
-    width: 250px;
-    font-weight: 600;
-    outline: none;
-    margin-right: 10px;
-    color: #292929;
-    box-shadow: rgba(73, 115, 254, 0.4) 0px 0px 3px, rgba(133, 120, 230, 0.4) 0px 0px 5px;
-    cursor: pointer;
-    -webkit-transition: 0.25s;
-    -o-transition: 0.25s;
-    transition: 0.25s;
-  }
-  
-  .searchBar:hover {
-    background-color: rgba(106, 106, 106, 0.1);
-  }
-  
-  .searchBar:focus {
-    background-color: rgba(106, 106, 106, 0.1);
-  }
-  
-  
-  .searchBtn{
-    outline: none;
-    border: none;
-    background-color: rgba(130, 130, 130, .2);
-    border-radius: 12px;
-    color: rgb(121, 130, 227);
-    cursor: pointer;
-    min-height: 40px;
-    min-width: 40px;
-    margin-right: 10px;
-    -webkit-transition: 0.25s;
-    -o-transition: 0.25s;
-    transition: 0.25s;
-  }
-  
-  .searchBtn:hover{
-    background-color: rgba(130, 130, 130, 0.5);
-  }
-  
-  .locationBtn{
-    outline: none;
-    border: none;
-    background-color: rgba(130, 130, 130, .2);
-    border-radius: 12px;
-    min-height: 40px;
-    min-width: 40px;
-    cursor: pointer;
-    -webkit-transition: 0.25s;
-    -o-transition: 0.25s;
-    transition: 0.25s;
-  }
-  
-  .locationBtn:hover{
-    background-color: rgba(130, 130, 130, 0.5);
-  }
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
 
-  /*Mobile*/
+.searchContainer {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  top: 15px;
+}
+
+.searchBar {
+  border: none;
+  background-color: rgba(181, 25, 25, 0);
+  padding: 10px;
+  border-radius: 10px;
+  width: 250px;
+  font-weight: 600;
+  outline: none;
+  margin-right: 10px;
+  color: #292929;
+  -webkit-box-shadow: rgba(73, 115, 254, 0.4) 0px 0px 3px, rgba(133, 120, 230, 0.4) 0px 0px 5px;
+  box-shadow: rgba(73, 115, 254, 0.4) 0px 0px 3px, rgba(133, 120, 230, 0.4) 0px 0px 5px;
+  cursor: pointer;
+  -webkit-transition: 0.25s;
+  -o-transition: 0.25s;
+  transition: 0.25s;
+}
+
+.searchBar:hover {
+  background-color: rgba(106, 106, 106, 0.1);
+}
+
+.searchBar:focus {
+  background-color: rgba(106, 106, 106, 0.1);
+}
+
+
+.searchBtn {
+  outline: none;
+  border: none;
+  background-color: rgba(130, 130, 130, .2);
+  border-radius: 12px;
+  color: rgb(121, 130, 227);
+  cursor: pointer;
+  min-height: 40px;
+  min-width: 40px;
+  margin-right: 10px;
+  -webkit-transition: 0.25s;
+  -o-transition: 0.25s;
+  transition: 0.25s;
+}
+
+.searchBtn:hover {
+  background-color: rgba(130, 130, 130, 0.5);
+}
+
+.locationBtn {
+  outline: none;
+  border: none;
+  background-color: rgba(130, 130, 130, .2);
+  border-radius: 12px;
+  min-height: 40px;
+  min-width: 40px;
+  cursor: pointer;
+  -webkit-transition: 0.25s;
+  -o-transition: 0.25s;
+  transition: 0.25s;
+}
+
+.locationBtn:hover {
+  background-color: rgba(130, 130, 130, 0.5);
+}
+
+/*Mobile*/
 
 @media(max-width: 767px) {
   .searchBar {

@@ -1,8 +1,22 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 .weatherContainer {
     position: relative;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
     display: inline-flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
-    order:  0;
+    -webkit-box-ordinal-group: 1;
+    -ms-flex-order: 0;
+    order: 0;
     max-width: 100%;
     margin-bottom: 80px;
     padding: 10px;
@@ -94,16 +108,16 @@
 }
 
 
-.OtherInformationIconIp{
-    max-width: 20px ;
+.OtherInformationIconIp {
+    max-width: 20px;
 }
 
-.daylightHours{
+.daylightHours {
     font-size: 15px;
 }
 
 /*=========== Currency ==============*/
-.countryInfo{
+.countryInfo {
     position: absolute;
     color: rgba(254, 254, 254, 0.6);
     bottom: 12rem;
@@ -114,44 +128,59 @@
     font-weight: 600;
     font-size: 14px;
 }
-.countryInfo>h5{
+
+.countryInfo>h5 {
     font-size: 14px;
     margin-bottom: 20px;
     text-align: center;
     width: 100%;
     color: rgba(254, 254, 254, 0.7);
 }
-.countryInfo span{
+
+.countryInfo span {
     margin-bottom: 0px;
     text-align: left;
     color: rgba(254, 254, 254, 0.7);
 }
 
-.curencyVallue{
+.curencyVallue {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     width: 100%;
     margin-bottom: 10px;
 }
 
 
-.countryInfoItems{
+.countryInfoItems {
     margin-bottom: 8px;
 }
 
 /* Second column */
-.cryptoWrapper{
+.cryptoWrapper {
     position: absolute;
     left: 200px;
     top: 95px;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
     display: inline-flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
     align-items: flex-start;
     padding: 5px;
 }
 
-.cryptoWrapper li{
+.cryptoWrapper li {
     width: 10rem;
 }
 
@@ -159,6 +188,8 @@
 /*=========== Air Quality ==============*/
 .airQuality {
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     margin-bottom: 5px;
 }
@@ -168,25 +199,29 @@
 }
 
 .airQualityTitle {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
     display: inline-flex;
     margin-right: 10px;
 }
 
-.questionIconWrapper{
+.questionIconWrapper {
     position: absolute;
     margin-left: 15px;
     cursor: pointer;
 }
 
-.questionIcon{
+.questionIcon {
     width: 30px;
     -webkit-transition: 0.25s;
     -o-transition: 0.25s;
     transition: 0.25s;
 }
 
-.questionIcon:hover{
+.questionIcon:hover {
     width: 40px;
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
     transform: rotate(360deg);
 }
 
@@ -241,7 +276,7 @@
     color: rgb(197, 0, 26);
 }
 
-.airDanger{
+.airDanger {
     color: rgb(150, 1, 196);
 }
 
@@ -266,7 +301,7 @@
     color: rgb(197, 0, 26);
 }
 
-.uvProgressBar{
+.uvProgressBar {
     position: relative;
     text-align: center;
     width: 80px;
@@ -276,32 +311,39 @@
     overflow: hidden;
     border-radius: 2px;
     background-color: #4d4d4d5e;
+    -webkit-appearance: none;
+    -moz-appearance: none;
     appearance: none;
+    -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, .8) inset;
     box-shadow: 0 2px 2px rgba(0, 0, 0, .8) inset;
     opacity: .7;
 }
 
 
 .uvProgressBar[value]::-moz-progress-bar {
-      background-color: #3d2fdeac;
-      border-radius: 2px;
-      border: 0;
-      appearance: none;
-  }
-.uvProgressBar[value]::-webkit-progress-bar {
-      background-color: #4d4d4d5e;
-      border-radius: 2px;
-      border: 0;
-      appearance: none;
-  }
+    background-color: #3d2fdeac;
+    border-radius: 2px;
+    border: 0;
+    -moz-appearance: none;
+    appearance: none;
+}
 
-  .uvProgressBar::-webkit-progress-value{
+.uvProgressBar[value]::-webkit-progress-bar {
+    background-color: #4d4d4d5e;
+    border-radius: 2px;
+    border: 0;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.uvProgressBar::-webkit-progress-value {
     width: 80px;
     height: 9px;
     border: 0;
     overflow: hidden;
     border-radius: 2px;
     background-color: #3d2fdeac;
+    -webkit-appearance: none;
     appearance: none;
     text-align: center;
 }
@@ -310,11 +352,19 @@
     position: relative;
     padding: 10px;
     bottom: 220px;
-    left: 18rem;;
+    left: 18rem;
+    ;
+    display: -webkit-inline-box;
+    ;
+    display: -ms-inline-flexbox;
+    ;
     display: inline-flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     list-style: none;
-    line-height: 2; 
+    line-height: 2;
     font-weight: 600;
     font-size: 15px;
     color: rgba(254, 254, 254, 0.6);
@@ -329,11 +379,11 @@
     font-weight: 400;
 }
 
-.cityNative{
+.cityNative {
     max-width: 30%;
 }
 
-.ipAddr{
+.ipAddr {
     font-size: 15px;
     line-height: .3;
 }
@@ -349,7 +399,11 @@
 
 
 .flex {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
     display: inline-flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     width: 20%;
     position: relative;
@@ -373,7 +427,7 @@
 }
 
 /*======================== IP Info ========================*/
-.ipRelatedInformationWrapper{
+.ipRelatedInformationWrapper {
     position: relative;
     left: 720px;
     bottom: 340px;
@@ -394,8 +448,11 @@
     position: relative;
     z-index: 0;
     border-radius: 8px;
+    -moz-user-select: none;
+    -ms-user-select: none;
     user-select: none;
     -webkit-user-select: none;
+    -ms-touch-action: manipulation;
     touch-action: manipulation;
     -webkit-transition: 0.25s;
     -o-transition: 0.25s;
@@ -404,11 +461,18 @@
 
 .currentWeatherBtn:hover {
     color: rgb(179, 179, 179);
+    -webkit-box-shadow: rgba(201, 201, 201, 0.1) 0px 2px 15px, rgba(62, 62, 62, 0.2) 0px 4px 15px;
     box-shadow: rgba(201, 201, 201, 0.1) 0px 2px 15px, rgba(62, 62, 62, 0.2) 0px 4px 15px;
 }
 
 .currentWeatherBtn:before {
     content: "";
+    background: -o-linear-gradient(45deg,
+            #5f5f5f94,
+            #b2b2b29b,
+            #4848488f,
+            #3636367d,
+            #2a4e67);
     background: linear-gradient(45deg,
             #5f5f5f94,
             #b2b2b29b,
@@ -424,10 +488,27 @@
     -webkit-filter: blur(5px);
     width: calc(100% + 4px);
     height: calc(100% + 4px);
+    -webkit-animation: glowing-currentWeatherBtn 15s linear infinite;
     animation: glowing-currentWeatherBtn 15s linear infinite;
+    -webkit-transition: opacity 0.3s ease-in-out;
+    -o-transition: opacity 0.3s ease-in-out;
     transition: opacity 0.3s ease-in-out;
     border-radius: 10px;
     opacity: .4;
+}
+
+@-webkit-keyframes glowing-currentWeatherBtn {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
 }
 
 @keyframes glowing-currentWeatherBtn {
@@ -456,7 +537,7 @@
     border-radius: 10px;
 }
 
-.navBackBtn{
+.navBackBtn {
     position: relative;
     bottom: 40px;
     max-width: 95px;
@@ -465,6 +546,7 @@
     color: rgba(218, 217, 217, 0.77);
     font-weight: 600;
     border: none;
+    -webkit-box-shadow: rgba(33, 33, 33, 0.1) 0px 2px 10px, rgba(29, 29, 29, 0.4) 0px 4px 10px;
     box-shadow: rgba(33, 33, 33, 0.1) 0px 2px 10px, rgba(29, 29, 29, 0.4) 0px 4px 10px;
     background-color: #3568f386;
     border-radius: 6px;
@@ -473,7 +555,7 @@
     transition: 0.25s;
 }
 
-.navBackBtn:hover{
+.navBackBtn:hover {
     background-color: #3054b886;
 }
 
@@ -482,8 +564,15 @@
 @media(max-width: 1320px) {
     .weatherContainer {
         position: relative;
+        display: -webkit-inline-box;
+        display: -ms-inline-flexbox;
         display: inline-flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
+        -webkit-box-ordinal-group: 1;
+        -ms-flex-order: 0;
         order: 0;
         max-width: 100%;
         margin-bottom: 80px;
@@ -493,178 +582,212 @@
         font-size: 18px;
     }
 
-        .OtherInformation {
-            position: relative;
-            padding: 10px;
-            bottom: 18rem;
-            left: 20rem;
-            list-style: none;
-            line-height: 2;
-            font-weight: 600;
-            font-size: 16px;
-            color: rgba(254, 254, 254, 0.6);
-            word-wrap: break-word;
-        }
-                                                .OtherInformationForecast {
-                                                    position: relative;
-                                                    padding: 10px;
-                                                    bottom: 16rem;
-                                                    left: 4rem;
-                                                    margin: 0 auto;
-                                                    display: inline-flex;
-                                                    flex-direction: column;
-                                                    list-style: none;
-                                                    line-height: 2;
-                                                    font-weight: 600;
-                                                    font-size: 18px;
-                                                    color: rgba(254, 254, 254, 0.6);
-                                                    word-wrap: break-word;
-                                                }
-                /*=========== Currency ==============*/
-                .countryInfo {
-                    position: relative;
-                    color: rgba(254, 254, 254, 0.6);
-                    bottom: 12rem;
-                    left: 0;
-                    height: 50px;
-                    margin: 0 auto;
-                    max-width: 100%;
-                    font-size: 16px;
-                }
-                                                           /* Second column */
-                                                           .cryptoWrapper {
-                                                               position: absolute;
-                                                               left: 200px;
-                                                               top: 6.2rem;
-                                                               display: inline-flex;
-                                                               flex-direction: column;
-                                                               justify-content: center;
-                                                               align-items: flex-start;
-                                                               padding: 5px;
-                                                           }
+    .OtherInformation {
+        position: relative;
+        padding: 10px;
+        bottom: 18rem;
+        left: 20rem;
+        list-style: none;
+        line-height: 2;
+        font-weight: 600;
+        font-size: 16px;
+        color: rgba(254, 254, 254, 0.6);
+        word-wrap: break-word;
+    }
+
+    .OtherInformationForecast {
+        position: relative;
+        padding: 10px;
+        bottom: 16rem;
+        left: 4rem;
+        margin: 0 auto;
+        display: -webkit-inline-box;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        list-style: none;
+        line-height: 2;
+        font-weight: 600;
+        font-size: 18px;
+        color: rgba(254, 254, 254, 0.6);
+        word-wrap: break-word;
+    }
+
+    /*=========== Currency ==============*/
+    .countryInfo {
+        position: relative;
+        color: rgba(254, 254, 254, 0.6);
+        bottom: 12rem;
+        left: 0;
+        height: 50px;
+        margin: 0 auto;
+        max-width: 100%;
+        font-size: 16px;
+    }
+
+    /* Second column */
+    .cryptoWrapper {
+        position: absolute;
+        left: 200px;
+        top: 6.2rem;
+        display: -webkit-inline-box;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+        align-items: flex-start;
+        padding: 5px;
+    }
 }
 
 
-@media(max-width: 950px){ 
+@media(max-width: 950px) {
     .weatherContainer {
-            position: relative;
-            display: inline-flex;
-            flex-direction: column;
-            order: 0;
-            width: 100%;
-            margin-top: 40px;
-            margin-bottom: 280px;
-            padding: 30px;
-            max-height: 75rem;
-            line-height: 1.6;
-            font-size: 25px;
-        }
-
-                /*============== TEMP ===================*/
-                .tempCold {
-                    color: rgb(207, 228, 234);
-                    position: relative;
-                    top: -10px;
-                    margin: 15px;
-                font-size: 70px;
-                }
-        
-                .tempVeryCold {
-                    color: rgb(82, 154, 221);
-                    position: relative;
-                    top: -10px;
-                    margin: 15px;
-                    font-size: 70px;
-                }
-        
-                .temp {
-                    color: rgb(234, 234, 207);
-                    position: relative;
-                    top: -10px;
-                    margin: 15px;
-        font-size: 70px;
-                }
-        
-                .tempAverageDegrees {
-                    color: rgb(229, 206, 153);
-                    position: relative;
-                    top: -10px;
-                    margin: 15px;
-    font-size: 70px;
-                }
-        
-                .tempHighDegrees {
-                    color: rgb(234, 172, 90);
-                    position: relative;
-                    top: -10px;
-                    margin: 15px;
-            font-size: 70px;
-                }
-        
-                .tempExtremeDegrees {
-                    color: rgb(255, 117, 42);
-                    position: relative;
-                    top: -10px;
-                    margin: 15px;
-                font-size: 70px;
-                }
-        
-                .feelsLike {
-                    position: relative;
-                    top: -16px;
-                    font-size: 20px;
-                    font-weight: 600;
-                }
-    
-        .OtherInformation {
-            position: relative;
-            padding: 10px;
-            bottom: 0;
-            left: 0;
-            margin: 0 auto;
-            list-style: none;
-            line-height: 2;
-            font-weight: 600;
-            font-size: 20px;
-            color: rgba(254, 254, 254, 0.6);
-            word-wrap: break-word;
-        }
-
-                .OtherInformationForecast {
-                    position: relative;
-                    padding: 10px;
-                    bottom: 0;
-                    left: 0;
-                    margin: 0 auto;
-                    display: inline-flex;
-                    flex-direction: column;
-                    list-style: none;
-                    line-height: 2;
-                    font-weight: 600;
-                    font-size: 20px;
-                    color: rgba(254, 254, 254, 0.6);
-                    word-wrap: break-word;
-                }
-    
-        /*=========== Currency ==============*/
-        .countryInfo {
-            position: relative;
-            color: rgba(254, 254, 254, 0.6);
-            bottom: -2rem;
-            left: -5rem;
-            height: 70px;
-            margin: 0 auto;
-            max-width: 100%;
-            list-style-type: none;
-            font-weight: 600;
-            font-size: 16px;
-        }
-} 
-
-@media(max-width: 767px){ 
-    .weatherContainer{
         position: relative;
+        display: -webkit-inline-box;
+        display: -ms-inline-flexbox;
         display: inline-flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-ordinal-group: 1;
+        -ms-flex-order: 0;
+        order: 0;
+        width: 100%;
+        margin-top: 40px;
+        margin-bottom: 280px;
+        padding: 30px;
+        max-height: 75rem;
+        line-height: 1.6;
+        font-size: 25px;
+    }
+
+    /*============== TEMP ===================*/
+    .tempCold {
+        color: rgb(207, 228, 234);
+        position: relative;
+        top: -10px;
+        margin: 15px;
+        font-size: 70px;
+    }
+
+    .tempVeryCold {
+        color: rgb(82, 154, 221);
+        position: relative;
+        top: -10px;
+        margin: 15px;
+        font-size: 70px;
+    }
+
+    .temp {
+        color: rgb(234, 234, 207);
+        position: relative;
+        top: -10px;
+        margin: 15px;
+        font-size: 70px;
+    }
+
+    .tempAverageDegrees {
+        color: rgb(229, 206, 153);
+        position: relative;
+        top: -10px;
+        margin: 15px;
+        font-size: 70px;
+    }
+
+    .tempHighDegrees {
+        color: rgb(234, 172, 90);
+        position: relative;
+        top: -10px;
+        margin: 15px;
+        font-size: 70px;
+    }
+
+    .tempExtremeDegrees {
+        color: rgb(255, 117, 42);
+        position: relative;
+        top: -10px;
+        margin: 15px;
+        font-size: 70px;
+    }
+
+    .feelsLike {
+        position: relative;
+        top: -16px;
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    .OtherInformation {
+        position: relative;
+        padding: 10px;
+        bottom: 0;
+        left: 0;
+        margin: 0 auto;
+        list-style: none;
+        line-height: 2;
+        font-weight: 600;
+        font-size: 20px;
+        color: rgba(254, 254, 254, 0.6);
+        word-wrap: break-word;
+    }
+
+    .OtherInformationForecast {
+        position: relative;
+        padding: 10px;
+        bottom: 0;
+        left: 0;
+        margin: 0 auto;
+        display: -webkit-inline-box;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        list-style: none;
+        line-height: 2;
+        font-weight: 600;
+        font-size: 20px;
+        color: rgba(254, 254, 254, 0.6);
+        word-wrap: break-word;
+    }
+
+    /*=========== Currency ==============*/
+    .countryInfo {
+        position: relative;
+        color: rgba(254, 254, 254, 0.6);
+        bottom: -2rem;
+        left: -5rem;
+        height: 70px;
+        margin: 0 auto;
+        max-width: 100%;
+        list-style-type: none;
+        font-weight: 600;
+        font-size: 16px;
+    }
+}
+
+@media(max-width: 767px) {
+    .weatherContainer {
+        position: relative;
+        display: -webkit-inline-box;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
         max-width: 100%;
         margin-bottom: 33rem;
@@ -675,30 +798,36 @@
         padding-left: 15px;
     }
 
-        .city {
-            margin: 0;
-            line-height: .5;
-            max-width: 100%;
-            font-size: 25px;
-            font-weight: 600;
-        }
-        .cityNative {
-            max-width: 100%;
-        }
+    .city {
+        margin: 0;
+        line-height: .5;
+        max-width: 100%;
+        font-size: 25px;
+        font-weight: 600;
+    }
 
-                .ipAddr {
-                    font-size: 15px;
-                    line-height: 1.3;
-                }
-        .flex {
-            display: inline-flex;
-            align-items: center;
-            width: 80%;
-            position: relative;
-            left: 0;
-            top: 0;
+    .cityNative {
+        max-width: 100%;
+    }
 
-        }
+    .ipAddr {
+        font-size: 15px;
+        line-height: 1.3;
+    }
+
+    .flex {
+        display: -webkit-inline-box;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        width: 80%;
+        position: relative;
+        left: 0;
+        top: 0;
+
+    }
 
 
     .OtherInformation {
@@ -707,7 +836,12 @@
         margin: 10px;
         bottom: -2rem;
         left: -2rem;
+        display: -webkit-inline-box;
+        display: -ms-inline-flexbox;
         display: inline-flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
         line-height: 2.2;
         font-weight: 600;
@@ -715,29 +849,35 @@
         color: rgba(254, 254, 254, 0.6);
         word-wrap: break-word;
     }
+
     .OtherInformationIcon {
         max-width: 23px;
         margin-right: 10px;
     }
 
     /* Next two days weather info*/
-        .OtherInformationForecast {
-            position: relative;
-            padding: 0;
-            bottom: -4rem;
-            left: -2rem;
-            display: inline-flex;
-            flex-direction: column;
-            list-style: none;
-            line-height: 2.2;
-            font-weight: 600;
-            font-size: 14px;
-            color: rgba(254, 254, 254, 0.6);
-            word-wrap: break-word;
-        }
-    
+    .OtherInformationForecast {
+        position: relative;
+        padding: 0;
+        bottom: -4rem;
+        left: -2rem;
+        display: -webkit-inline-box;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        list-style: none;
+        line-height: 2.2;
+        font-weight: 600;
+        font-size: 14px;
+        color: rgba(254, 254, 254, 0.6);
+        word-wrap: break-word;
+    }
+
     /*=========== currency ==============*/
-    .countryInfo{
+    .countryInfo {
         position: absolute;
         width: 100%;
         margin: 0 auto;
@@ -747,9 +887,10 @@
         list-style-type: none;
         font-weight: 600;
         font-size: 14px;
-        
+
     }
-    .countryInfo>h5{
+
+    .countryInfo>h5 {
         position: relative;
         max-width: 80%;
         margin-bottom: 30px;
@@ -757,33 +898,46 @@
         font-size: 18px;
         color: #574cee;
     }
-    
-    .countryInfoItems{
+
+    .countryInfoItems {
         margin-bottom: 10px;
     }
 
-        .curencyVallue {
-            display: flex;
-            justify-content: flex-start;
-            width: 100%;
-            margin-bottom: 10px;
-        }
-        
-                /* Second column */
-                .cryptoWrapper {
-                    position: absolute;
-                    left: 200px;
-                    top: 8rem;
-                    display: inline-flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: flex-start;
-                    padding: 5px;
-                }
-        
-                .cryptoWrapper li {
-                    width: 100%;
-                }
+    .curencyVallue {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    /* Second column */
+    .cryptoWrapper {
+        position: absolute;
+        left: 200px;
+        top: 8rem;
+        display: -webkit-inline-box;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+        align-items: flex-start;
+        padding: 5px;
+    }
+
+    .cryptoWrapper li {
+        width: 100%;
+    }
 
     .tempCold {
         color: rgb(207, 228, 234);
@@ -791,48 +945,48 @@
         font-size: 60px;
         font-weight: 300;
     }
-    
+
     .tempVeryCold {
         color: rgb(82, 154, 221);
         padding: 22px;
         font-size: 60px;
         font-weight: 300;
     }
-    
+
     .temp {
         color: rgb(234, 234, 207);
         padding: 22px;
         font-size: 60px;
         font-weight: 300;
     }
-    
+
     .tempAverageDegrees {
         color: rgb(229, 206, 153);
         padding: 22px;
         font-size: 60px;
         font-weight: 300;
     }
-    
+
     .tempHighDegrees {
         color: rgb(234, 172, 90);
         padding: 22px;
         font-size: 60px;
         font-weight: 300;
     }
-    
+
     .tempExtremeDegrees {
         color: rgb(255, 117, 42);
         padding: 22px;
         font-size: 60px;
         font-weight: 300;
     }
-    
+
     .feelsLike {
         position: relative;
         top: -16px;
         font-size: 18px;
         font-weight: 400;
     }
-        
 
-    }
+
+}
