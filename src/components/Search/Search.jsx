@@ -12,7 +12,7 @@ function Search(props) {
             onChange={(e) => props.setQuery(e.target.value)}
             value={props.query}
             onKeyPress={props.search}
-            placeholder='Поиск по городу или стране'></input>
+            placeholder='Город или страна'></input>
 
           <button onClick={props.search} className={style.searchBtn} alt='search'>
             <svg

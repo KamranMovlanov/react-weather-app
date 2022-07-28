@@ -7,7 +7,7 @@
   
   .searchBar {
     border: none;
-    background-color: rgba(130, 130, 130, 0.15);
+    background-color: rgba(130, 130, 130, 0);
     padding: 10px;
     border-radius: 10px;
     width: 250px;
@@ -15,7 +15,7 @@
     outline: none;
     margin-right: 10px;
     color: #292929;
-    box-shadow: rgba(118, 118, 118, 0.4) 0px 0px 3px, rgba(165, 165, 165, 0.15) 0px 0px 5px;
+    box-shadow: rgba(73, 115, 254, 0.4) 0px 0px 3px, rgba(133, 120, 230, 0.4) 0px 0px 5px;
     cursor: pointer;
     -webkit-transition: 0.25s;
     -o-transition: 0.25s;
@@ -34,9 +34,9 @@
   .searchBtn{
     outline: none;
     border: none;
-    background-color: rgba(130, 130, 130, 0.3);
+    background-color: rgba(130, 130, 130, 0);
     border-radius: 12px;
-    color: rgb(197, 197, 197);
+    color: rgb(121, 130, 227);
     cursor: pointer;
     min-height: 40px;
     min-width: 40px;
@@ -53,11 +53,10 @@
   .locationBtn{
     outline: none;
     border: none;
-    background-color: rgba(130, 130, 130, 0.3);
+    background-color: rgba(130, 130, 130, 0);
     border-radius: 12px;
     min-height: 40px;
     min-width: 40px;
-    color: rgb(197, 197, 197);
     cursor: pointer;
     -webkit-transition: 0.25s;
     -o-transition: 0.25s;
@@ -72,7 +71,7 @@
 
 @media(max-width: 767px) {
   .searchBar {
-    width: 190px;
+    width: 200px;
   }
 
 }
