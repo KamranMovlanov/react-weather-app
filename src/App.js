@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import * as axios from "axios";
 import './App.css';
 import { isEmpty } from './components/utilities/utilities';
@@ -33,8 +32,6 @@ function App() {
   const [toggle, setToggle] = useState(0)
   const [errStatus, setErrStatus] = useState(false)
 
-  //Changing url-addr
-  // const navigate = useNavigate()
 
   //Unsplash background
   useEffect(() => {
@@ -238,7 +235,7 @@ function App() {
         <Search query={query} search={search} locationWeather={locationWeather} setQuery={setQuery} errStatus={errStatus} />
         <ErrorBoundary >
           <GlobalWeatherPage initialWeather={currentWeather} setSearchWeatherData={setSearchWeatherData} searchResult={searchWeatherData} twoDaysWeather={toggle}
-            setToggle={setToggle} ipData={ipData} exchangeRate={exchangeRate} setErrStatus={setErrStatus} />
+            setToggle={setToggle} ipData={ipData} exchangeRate={exchangeRate} setErrStatus={setErrStatus} setCurrentWeather={setCurrentWeather} />
         </ErrorBoundary>
         <TwoDaysWeather initialForecast={currentWeather} searchForecast={searchWeatherData} setToggle={setToggle} errStatus={errStatus} />
         <WeatherTimeline searchForecastHours={searchWeatherData} initialForecastHours={currentWeather} twoDaysWeather={toggle} errStatus={errStatus} />
