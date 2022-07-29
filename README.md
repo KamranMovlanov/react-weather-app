@@ -1,5 +1,5 @@
 
-# react weather ⛅ and currency 💵 app
+# React weather ⛅ and currency 💵 app
 
 App Features:
 - Search by country or city 
