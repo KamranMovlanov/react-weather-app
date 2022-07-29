@@ -25,6 +25,7 @@ class ErrorBoundary extends Component {
       const errСancellation = () => {
         return this.setState({ hasError: false });
       };
+      console.log(this.props.children.props);
 
       return (
         <div className={style.AlternativeSearchResult}>
@@ -41,6 +42,7 @@ class ErrorBoundary extends Component {
 
             <AlternativeGlobalWeatherPage
               searchResult={this.props.children.props.searchResult}
+              initialWeather={this.props.children.props.initialWeather}
               setSearchWeatherData={this.props.children.props.setSearchWeatherData}
               exchangeRate={this.props.children.props.exchangeRate}
               ipData={this.props.children.props.ipData}

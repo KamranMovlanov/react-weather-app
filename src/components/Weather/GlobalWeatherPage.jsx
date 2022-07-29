@@ -12,7 +12,6 @@ import SearchNextDaysWeather from "./SearchWeather/SearchNextDaysWeather/SearchN
 
 function GlobalWeatherPage(props) {
   moment.locale("ru");
-  const d = new Date();
 
   if (isEmpty(props.initialWeather.data)) {
     return <div className={style.loader}></div>;

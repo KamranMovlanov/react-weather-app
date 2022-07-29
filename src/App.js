@@ -86,6 +86,7 @@ function App() {
   //Current-local Weather
   useEffect(() => {
     const fetchData = async () => {
+      console.log("ipData.data.region: ", ipData.data.region)
       if (ipData.data.region) {
         return await axios.get(`${api.baseURL}key=${api.apiKey}&q=${ipData.data.region}&lang=ru&days=7&ip&aqi=yes&alerts=no`, { timeout: 3000, })
           .catch(error => {
@@ -97,6 +98,7 @@ function App() {
             }
           })
           .then((data) => {
+            console.log("Ip Data:", data)
             setCurrentWeather(data)
           })
       }
