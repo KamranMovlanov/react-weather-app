@@ -128,7 +128,6 @@ function AlternativeGlobalWeatherPage(props) {
   };
 
   if (!isEmpty(props.searchResult.data)) {
-    alert("Running");
     return (
       <main className={style.weatherContainer}>
         {props.twoDaysWeather > 0 ? (
