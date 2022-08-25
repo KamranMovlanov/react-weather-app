@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import * as axios from "axios";
 import './App.css';
 import { isEmpty } from './components/utilities/utilities';
@@ -32,6 +32,7 @@ function App() {
   const [toggle, setToggle] = useState(0)
   const [errStatus, setErrStatus] = useState(false)
 
+  const isMouted = useRef()
 
   //Unsplash background
   useEffect(() => {
@@ -47,44 +48,42 @@ function App() {
     }
   }, [ipData, currentWeather])
 
-  /*
-  Uncaught (in promise) TypeError: Cannot read properties of undefined (reading 'ok')
-      at App.js:111:25
-  (anonymous) @ App.js:111
-  
-  */
+
   // Ip Addr data
   useEffect(() => {
+
+    if (isMouted.current) return
+    isMouted.current = true
+
     const fetchData = async () => {
-      return await axios.get(`${ipAddrApi.baseURL}?api_key=${ipAddrApi.apiKey}&`, { timeout: 3000, })
-        .then((data) => {
-          setIpData(data)
-          // navigate("/current", { replace: true })
-        })
-        .catch(function (error) {
-          console.log("Ip Error: ", error)
-          if (error.response) {
-            // alert(`Ошибка: ${error.response.status} `)
-            console.log(error.response.data);
-            console.log(error.response.status);
-            console.log(error.response.headers);
-            if (error.response.status === 429) {
-            }
-          }
-        })
+      try {
+        const data = await axios.get(`${ipAddrApi.baseURL}?api_key=${ipAddrApi.apiKey}&`, { timeout: 2000, })
+        setIpData(data)
+      }
+      catch (error) {
+        console.log("Ip Error: ", error)
+        if (error.response) {
+          console.log(error.response.data);
+          console.log(error.response.status);
+          console.log(error.response.headers);
+        }
+      }
     }
 
     if (isEmpty(ipData)) {
       fetchData()
     }
 
-  }, [ipData])
+  }, [ipData, currentWeather])
 
   //Current-local Weather
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchData = () => {
       if (ipData.data.region) {
-        return await axios.get(`${api.baseURL}key=${api.apiKey}&q=${ipData.data.region}&lang=ru&days=7&ip&aqi=yes&alerts=no`, { timeout: 3000, })
+        return axios.get(`${api.baseURL}key=${api.apiKey}&q=${ipData.data.region}&lang=ru&days=7&ip&aqi=yes&alerts=no`, { timeout: 3000, })
+          .then((data) => {
+            setCurrentWeather(data)
+          })
           .catch(error => {
             console.log(error)
             if (error.response) {
@@ -92,14 +91,13 @@ function App() {
               console.log(error.response.data);
               console.log(error.response.status);
             }
-          })
-          .then((data) => {
-            console.log("Ip Data:", data)
-            setCurrentWeather(data)
           })
       }
       if (!ipData.data.region) {
-        return await axios.get(`${api.baseURL}key=${api.apiKey}&q="Moscow"&lang=ru&days=7&ip&aqi=yes&alerts=no`, { timeout: 3000, })
+        return axios.get(`${api.baseURL}key=${api.apiKey}&q="Moscow"&lang=ru&days=7&ip&aqi=yes&alerts=no`, { timeout: 3000, })
+          .then((data) => {
+            setCurrentWeather(data)
+          })
           .catch(error => {
             console.log(error)
             if (error.response) {
@@ -108,10 +106,6 @@ function App() {
               console.log(error.response.status);
             }
           })
-          .then((data) => {
-            setCurrentWeather(data)
-          })
-
       }
     }
 
@@ -149,15 +143,21 @@ function App() {
     }
 
 
-    const allCurrencies = async () => {
+    const allCurrencies = () => {
       let URL = `https://api.exchangerate.host/latest?base=${!isEmpty(searchWeatherData.data) ?
         countryCur
         :
         ipData.data.currency.currency_code}&symbols=USD,EUR,TRY,CNY,RUB,JPY,GBP,CAD,AUD,NZD`
 
-      return await axios.get(URL, { timeout: 1000, })
+      return axios.get(URL, { timeout: 1000, })
         .then(function (values) {
+
           setExchangeRate(values)
+
+          // setExchangeRate((prev) => {
+          //   return { ...values, newCur: values }
+          // })
+
         })
         .catch((error) => {
           if (error.response) {
@@ -178,33 +178,31 @@ function App() {
 
 
   //Location weather
-  const locationWeather = async (e) => {
+  const locationWeather = (e) => {
     if (e._reactName === 'onClick' && navigator.geolocation) {
       e.preventDefault();
-      navigator.geolocation.getCurrentPosition(async (position) => {
+      navigator.geolocation.getCurrentPosition((position) => {
         return axios.get(`${api.baseURL}key=${api.apiKey}&q=${position.coords.latitude},${position.coords.longitude}&lang=ru&days=7&aqi=yes&alerts=no`, { timeout: 1000, })
           .then((data) => {
             setCurrentWeather(data)
             // navigate("/current", { replace: true })
           })
-      }, error => {
-        console.log('Error', error)
-        alert("Ошибка навигации, определяем по ip")
-        return axios.get(`${api.baseURL}key=${api.apiKey}&q=${ipData.data.region}&lang=ru&days=7&ip&aqi=yes&alerts=no`, { timeout: 1000, })
-          .then((data) => {
-            setCurrentWeather(data)
+          .catch(error => {
+            alert("Ошибка навигации, определяем по ip")
+            return axios.get(`${api.baseURL}key=${api.apiKey}&q=${ipData.data.region}&lang=ru&days=7&ip&aqi=yes&alerts=no`, { timeout: 1000, })
+              .then((data) => {
+                setCurrentWeather(data)
+              })
           })
       })
-
     }
-
   }
 
   //Search
-  const search = async (e) => {
+  const search = (e) => {
     if (e.key === 'Enter' || e._reactName === 'onClick') {
       e.preventDefault();
-      await axios.get(`${api.baseURL}key=${api.apiKey}&q=${query}&lang=ru&days=7&aqi=yes&alerts=no`, {
+      axios.get(`${api.baseURL}key=${api.apiKey}&q=${query}&lang=ru&days=7&aqi=yes&alerts=no`, {
         timeout: 1000,
       })
         .then(data => {

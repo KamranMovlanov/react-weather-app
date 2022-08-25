@@ -35,7 +35,7 @@ function WeatherTimeline(props) {
   if (!isEmpty(props.searchForecastHours) && !props.errStatus) {
     return (
       <footer className={style.timelineContainer}>
-        {/*twoDaysWeather mean next days weather  */}
+        {/*twoDays Weather mean next days weather  */}
         {props.twoDaysWeather > 0
           ? props.searchForecastHours.data.forecast.forecastday
               .filter((el, i) => i === props.twoDaysWeather)
@@ -150,6 +150,7 @@ function WeatherTimeline(props) {
 
   // Local weather
   if (!isEmpty(props.initialForecastHours) && !props.errStatus) {
+    console.log("TimeLine");
     return (
       <footer className={style.timelineContainer}>
         {props.twoDaysWeather > 0
